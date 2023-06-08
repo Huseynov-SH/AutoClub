@@ -1,0 +1,65 @@
+﻿@model AutoClub.Models.WebSiteBio;
+@{
+    Layout = null;
+}
+
+<div class="footet_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="footet_logo">
+                    <h3>
+                        <a asp-controller="Home" asp-action="Index">
+                            Auto
+                            <span>Club</span>
+                        </a>
+                    </h3>
+                </div>
+                <p>© 2020 @Model.Copyright</p>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="footet_social">
+                    <div class="content_social">
+                        @if (Model.FacebookLink != null)
+                        {
+                            <a href="@Model.FacebookLink"><span class="fab fa-facebook-square"></span></a>
+                        }
+                        @if (Model.TwitterLink != null)
+                        {
+                            <a href="@Model.TwitterLink"><span class="fab fa-twitter-square"></span></a>
+                        }
+                        @if (Model.GooglePlusLink != null)
+                        {
+                            <a href="@Model.GooglePlusLink">
+                                <span class="fab fa-google-plus-square"></span>
+                            </a>
+                        }
+                        @if (Model.InstagramLink != null)
+                        {
+                            <a href="@Model.InstagramLink"><span class="fab fa-instagram"></span></a>
+                        }
+                        @if (Model.YoutubeLink != null)
+                        {
+                            <a href="@Model.YoutubeLink"><span class="fab fa-youtube-square"></span></a>
+                        }
+                        @if (Model.SkypeLink != null)
+                        {
+                            <a href="@Model.SkypeLink"><span class="fab fa-skype"></span></a>
+                        }
+                    </div>
+                    <div class="content_nav">
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Home" asp-action="VehicleList">All Vehicle</a></li>
+                            <li><a asp-controller="Vehicle" asp-action="Compare">Compare</a></li>
+                            <li><a asp-controller="About" asp-action="AboutUs">About</a></li>
+                            <li><a asp-controller="Shops" asp-action="Index">Shops</a></li>
+                            <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

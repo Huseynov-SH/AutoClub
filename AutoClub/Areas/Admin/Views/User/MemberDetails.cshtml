@@ -1,0 +1,183 @@
+﻿@using AutoClub.Models;
+@model AppUser;
+@{
+    ViewData["Title"] = "MemberDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-10 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-content widget-content-area">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-8 layout-spacing">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4 text-center">
+                                    <h4>Manager Images</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="avatar avatar-xl row justify-content-around">
+                            <img src="~/image/Users/@Model.Image" class="rounded" width="150" />
+                        </div>
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5 mb-3 text-center">
+                                    <h4>Manager Details</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Surname</th>
+                                        <th class="text-center">Profession</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.FirstName</td>
+                                        <td class="text-center">@Model.LastName</td>
+                                        <td class="text-center">@Model.Section</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">UserName</th>
+                                        <th class="text-center">Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.UserName</td>
+                                        <td class="text-center">@Model.Email</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5 mb-3 text-center">
+                                    <h4>Contact</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Address</th>
+                                        <th class="text-center">Phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.Location</td>
+                                        <td class="text-center">@Model.Phone</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-11 layout-spacing text-center">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-3 mb-3 text-center">
+                                    <h4>Manager Bio</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <p>@Model.Description</p>
+                    </div>
+                    <div class="col-lg-8 layout-spacing">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-5 mb-3 text-center">
+                                    <h4>Social</h4>
+                                </div>
+                            </div>
+                        </div>
+                        @if (Model.FacebookLink != null)
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-2">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Facebook</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"><a href="@Model.FacebookLink">@Model.FacebookLink</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        @if (Model.InstagramLink != null)
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-2">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Insdagram</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"><a href="@Model.InstagramLink">@Model.InstagramLink</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        @if (Model.TwitterLink != null)
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-2">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Twitter</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"><a href="@Model.TwitterLink">@Model.TwitterLink</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        @if (Model.LinkedinLink != null)
+                        {
+                            <div class="table-responsive">
+                                <table class="table mb-2">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Linkedin</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center"><a href="@Model.LinkedinLink">@Model.LinkedinLink</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        <div class="col-12 px-0 pt-5">
+                            <a asp-area="Admin" asp-controller="User" asp-action="Members" class="btn btn-outline-secondary btn-block">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

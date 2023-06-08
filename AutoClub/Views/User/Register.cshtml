@@ -1,0 +1,131 @@
+﻿@model AutoClub.ViewModels.RegisterVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    @await Component.InvokeAsync("HeaderTopBar")
+
+    <!-- * * *Start- Register * * *-->
+    <section id="Login">
+        <div class="container">
+            <div class="login_box">
+                <div class="login_box_logo"></div>
+                <div class="login_box_form">
+                    <h5>Register for create account</h5>
+                    <form method="post">
+                        <div class="form_item">
+                            <input asp-for="FirstName" placeholder="Name" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form_item">
+                            <input asp-for="LastName" placeholder="Surname" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form_item">
+                            <input asp-for="Username" placeholder="UserName" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="form_item">
+                            <input asp-for="Email" placeholder="Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form_item">
+                            <input asp-for="Password" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form_item">
+                            <input asp-for="ConfirmPassword" placeholder="Confirm Password" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="logintxt">
+                            <p class="text-warning">Check your email to verify your account</p>
+                        </div>
+                        <div class="form_item">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
+                    <div class="logintxt">
+                        <p>Have an account?<a asp-controller="User" asp-action="Login">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Register * * *-->
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @*@await Component.InvokeAsync("FooterMain")*@
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

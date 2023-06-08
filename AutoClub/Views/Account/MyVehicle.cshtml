@@ -1,0 +1,244 @@
+﻿@model AutoClub.ViewModels.AccVehicleVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Toastr * * * -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+          rel="stylesheet" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    <!-- * * *Start- Page Header * * * -->
+    <section id="MyAccountPageHeader">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-12 col-md-4">
+                    <div class="text">
+                        <h1>My Account: @User.Identity.Name</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Page Header * * * -->
+    <!-- * * *Start- Page Root * * * -->
+    <section id="MyAccountRoot">
+        <div class="container">
+            <a href="" style="color: #999999;">Home</a>
+            <i class="fa fa-angle-right" style="color: #999999;" ;></i>
+            <a href="" style="color: #545454;">My Account</a>
+        </div>
+    </section>
+    <!-- * * *End- Page Root * * * -->
+    <!-- * * *Start- Info Bar * * * -->
+    <section id="MyAccountInfoBar">
+        <div class="container">
+            <div class="col-12">
+                <div class="infobar_btns row">
+                    <a asp-controller="Account" asp-action="MyVehicle" class="active">
+                        MY VEHICLES
+                        <span class="fa fa-angle-right"></span>
+                    </a>
+                    @if (User.IsInRole("Company"))
+                    {
+                        <a asp-controller="Account" asp-action="MyProduct" class="">
+                            MY PRODUCTS
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    }
+                    <a asp-controller="Account" asp-action="FavoriteVehicle" class="">
+                        FAVORITE VEHICLES
+                        <span class="fa fa-angle-right"></span>
+                    </a>
+                    @if (User.IsInRole("Company"))
+                    {
+                        <a asp-controller="Account" asp-action="CompanySettings" class="">
+                            COMPANY DETAILS
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                        <a asp-controller="Shop" asp-action="Create" class="">
+                            CREATE PRODUCT
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    }
+                    @if (User.IsInRole("User"))
+                    {
+                        <a asp-controller="Account" asp-action="AccountSettings" class="">
+                            ACCOUNT DETAILS
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    }
+                    <a asp-controller="Vehicle" asp-action="Submit" class="">
+                        SELL A VEHICLE
+                        <span class="fa fa-angle-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Info Bar * * * -->
+    <!-- * * *Start- My Vehicle * * * -->
+    <section id="MyAccountMyVehicle">
+        <div class="container">
+            <div class="myItems">
+                <h1>My Vehicle</h1>
+                <div class="row">
+                    @if (Model.Vehicles.Count() > 0)
+                    {
+                        @foreach (var vehicle in Model.Vehicles)
+                        {
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 myitem">
+                                <div class="card">
+                                    @{int imgcount = 0;}
+                                    @foreach (var image in Model.VehicleImages)
+                                    {
+                                        @if (image.VehicleId == vehicle.Id && imgcount == 0)
+                                        {
+                                            <img class="card-img-top" src="~/image/Items/@image.Name" alt="">
+                                            imgcount += 1;
+                                        }
+                                    }
+                                    <div class="card-body">
+                                        @foreach (var make in Model.Makes)
+                                        {
+                                            @if (make.Id == vehicle.VehicleModel.MakeId)
+                                            {
+                                                <h5 class="card-title">@make.Name  @vehicle.VehicleModel.Name</h5>
+
+                                            }
+                                        }
+                                        <p style="text-align: center;margin-bottom: 5px;">@vehicle.CreateDate.ToString("g")</p>
+                                        <p class="card-text" style="font: 300 13px 'Open Sans',sans-serif;color: #666;">
+                                            @if (@vehicle.Description.Length <= 100)
+                                            {
+                                                @vehicle.Description
+                                            }
+                                            else
+                                            {
+                                                @vehicle.Description.Substring(0, 100)
+                                            }
+                                        </p>
+                                        <div class="row priceandbtns">
+                                            <h5 class="price" style="width: 100%;text-align: center;">$@vehicle.Price</h5>
+                                            @if (vehicle.Blocked)
+                                            {
+                                                <p style="text-align: center;margin-bottom: 5px; background-color:#ff6a00; color:#fff; border-radius:5px;width: 80%; padding:2px 0;">Status: Pending</p>
+                                            }
+                                            else
+                                            {
+                                                <p style="text-align: center;margin-bottom: 5px; background-color:forestgreen; color:#fff; border-radius:5px;width: 80%; padding:2px 0;">Status: Approved</p>
+                                            }
+                                            <div class="col-12 row px-0 my-2">
+                                                <div class="col-12 text-center">
+                                                    <a asp-controller="Vehicle" asp-action="Details" asp-route-id="@vehicle.Id" class="btn btn-outline-success w-100 mb-2">View Details</a>
+                                                </div>
+                                                <div class="col-12 text-center">
+                                                    <a asp-controller="Account" asp-action="UpdateMyVehicle" asp-route-id="@vehicle.Id" class="btn btn-outline-secondary w-100 mb-2">Update</a>
+                                                </div>
+                                                <div class="col-12 text-center">
+                                                    <a asp-controller="Ajax" asp-action="RemoveMyVehicle" asp-route-id="@vehicle.Id" class="btn btn-outline-danger removeMyVehicle w-100 mb-2">Remove Vehicle</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-primary w-100 text-center" role="alert">
+                            You have no vehicle
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- My Vehicle * * * -->
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+    <!-- * * *  Toastr * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- * * * My Js * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

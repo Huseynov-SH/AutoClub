@@ -1,0 +1,93 @@
+﻿@model AutoClub.Models.AboutUsMoreInfo;
+@{
+    ViewData["Title"] = "MoreInfo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-10 layout-spacing">
+        <form method="post" enctype="multipart/form-data">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Accordion 1</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Title</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <input asp-for="Block1Title" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Block1Title" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Inside</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <textarea asp-for="Block1Inside" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="Block1Inside" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Accordion 2</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Title</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <input asp-for="Block2Title" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Block2Title" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Inside</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <textarea asp-for="Block2Inside" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="Block2Inside" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Accordion 3</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Title</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <input asp-for="Block3Title" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Block3Title" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Inside</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <textarea asp-for="Block3Inside" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="Block3Inside" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="input-group my-4">
+                        <button type="submit" class="btn btn-outline-primary btn-block my-3">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

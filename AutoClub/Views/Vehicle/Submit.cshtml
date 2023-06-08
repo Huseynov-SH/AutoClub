@@ -1,0 +1,959 @@
+﻿@model AutoClub.ViewModels.VehicleVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+    <link rel="shortcut icon" href="~/image/logo/favicon.png">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    @if (User.Identity.IsAuthenticated)
+    {
+        <!-- * * *Start- Page Header * * * -->
+        <section id="SubmitPageHeader">
+            <div class="container">
+                <div class="row justify-content-between text-center">
+                    <div class="col-12 col-md-4">
+                        <div class="text">
+                            <h1>Submit Your Vehicle</h1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="text2">
+                            <h3>Add Your Vehicle In Our Listings</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * * *End- Page Header * * * -->
+        <!-- * * *Start- Page Root * * * -->
+        <section id="ItemDetailsRoot">
+            <div class="container">
+                <a href="" style="color: #999999;">Home</a>
+                <i class="fa fa-angle-right" style="color: #999999" ;></i>
+                <a href="" style="color: #545454">Submit a Vehicle</a>
+            </div>
+        </section>
+        <!-- * * *End- Page Root * * * -->
+        <!-- * * *Start- Info Bar * * * -->
+        <section id="SubmitInfoBar">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-md-8">
+                        <div class="custom_progress row">
+                            <div id="progstp2" class="custom_progress_step col-3">
+                                <div class="step_circle crcle_first">
+                                    <span></span>
+                                </div>
+                                <div class="step_circle">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div id="progstp3" class="custom_progress_step col-3">
+                                <div class="step_circle">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div id="progstp4" class="custom_progress_step col-3">
+                                <div class="step_circle">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div id="progstp5" class="custom_progress_step col-3">
+                                <div class="step_circle">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * * *End- Info Bar * * * -->
+        <!-- * * *Start- Submit * * * -->
+        <section id="Submit">
+            <div class="container">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-4 col-lg-3 px-0">
+                        <aside class="submit_aside mb-5">
+                            <div class="aside_step aside_step1 active">
+                                <h3>Step 1</h3>
+                                <div class="step_inner">
+                                    <div class="step_inner_icon">
+                                        <i class="fa fa-car"></i>
+                                    </div>
+                                    <div class="step_inner_info">
+                                        <h4>Add YOUR Vehicle</h4>
+                                        <p>Select your vehicle & add info</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aside_step aside_step2">
+                                <h3>Step 2</h3>
+                                <div class="step_inner">
+                                    <div class="step_inner_icon">
+                                        <i class="fa fa-list-ul"></i>
+                                    </div>
+                                    <div class="step_inner_info">
+                                        <h4>select details</h4>
+                                        <p>Choose vehicle specifications</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aside_step aside_step3">
+                                <h3>Step 3</h3>
+                                <div class="step_inner">
+                                    <div class="step_inner_icon">
+                                        <i class="fa fa-photo"></i>
+                                    </div>
+                                    <div class="step_inner_info">
+                                        <h4>Photos & videos</h4>
+                                        <p>Add images / videos of vehicle</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aside_step aside_step4">
+                                <h3>Step 4</h3>
+                                <div class="step_inner">
+                                    <div class="step_inner_icon">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="step_inner_info">
+                                        <h4>Contact details</h4>
+                                        <p>Choose vehicle specifications</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aside_step aside_step5">
+                                <h3>Step 5</h3>
+                                <div class="step_inner">
+                                    <div class="step_inner_icon">
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                    <div class="step_inner_info">
+                                        <h4>SUBMIT & PUBLISH</h4>
+                                        <p>Submit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="asider_step_triangle stp1"></div>
+                        </aside>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9 px-0">
+                        <div class="submitYourVehicle">
+                            <form method="post" enctype="multipart/form-data" class="w-100 h-100">
+                                <div id="Steps_container">
+                                    <div id="Steps" class="move-to-first">
+                                        <div id="Step-1">
+                                            <div class="sec_title">
+                                                <h2>Add Your Vehicle Details</h2>
+                                            </div>
+                                            <div class="submitForm_Items row">
+                                                <div class="col-12 py-3">
+                                                    <ul>
+                                                        <li class="text-danger"><span asp-validation-for="Vehicle.VehicleModelId" class="text-danger"></span></li>
+                                                        <li class="text-danger"><span asp-validation-for="Vehicle.RegistrationPlateNumber" class="text-danger"></span></li>
+                                                        <li class="text-danger"><span asp-validation-for="Vehicle.RegistrationNumber" class="text-danger"></span></li>
+                                                        <li class="text-danger"><span asp-validation-for="Vehicle.Photos" class="text-danger"></span></li>
+                                                        <li class="text-danger"> <span asp-validation-for="Vehicle.CupunCode" class="text-danger"></span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form_item">
+                                                        <label>Enter Make </label><span>*</span>
+                                                        <select asp-items="@(new SelectList(ViewBag.make,"Id","Name"))" id="SelectMake">
+                                                            <option value="0">Select a Make</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Vehicle Manufacturer Year </label><span>*</span>
+                                                        <input asp-for="Vehicle.VehicleManufacturerYear" />
+                                                        <span asp-validation-for="Vehicle.VehicleManufacturerYear" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>No. of Seats  </label><span>*</span>
+                                                        <input asp-for="Vehicle.NoOfSeats" />
+                                                        <span asp-validation-for="Vehicle.NoOfSeats" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Vehicle Transmission Type  </label><span>*</span>
+                                                        <select asp-for="Vehicle.TransmissionTypeId">
+                                                            @*<option value="0" selected>Select</option>*@
+
+                                                            @foreach (var item in ViewBag.transmissionTypes)
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>No. of Cylinders </label><span>*</span>
+                                                        <input asp-for="Vehicle.NoOfCylinders" />
+                                                        <span asp-validation-for="Vehicle.NoOfCylinders" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Select Fuel Type </label><span>*</span>
+                                                        <select asp-for="Vehicle.FuelTypeId">
+                                                            @*<option value="0" selected>Select</option>*@
+
+                                                            @foreach (var item in ViewBag.fuelTypes)
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>City Fuel Economy (L/100km) </label><span>*</span>
+                                                        <input asp-for="Vehicle.CityFuelEconomy" />
+                                                        <span asp-validation-for="Vehicle.CityFuelEconomy" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form_item">
+                                                        <label>Enter Model </label><span>*</span>
+                                                        <select asp-for="Vehicle.VehicleModelId" asp-items="@(new SelectList(string.Empty,"Id","Name"))" id="SelectModel">
+                                                            <option value="0">Select a Model</option>
+                                                        </select>
+                                                        <span asp-validation-for="Vehicle.VehicleModelId" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Select Body Type  </label><span>*</span>
+                                                        <select asp-for="Vehicle.BodyTypeId">
+                                                            @*<option value="0" selected>Select</option>*@
+
+                                                            @foreach (var item in ViewBag.bodyType)
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>No. of Doors </label><span>*</span>
+                                                        <input asp-for="Vehicle.NoOfDoors" />
+                                                        <span asp-validation-for="Vehicle.NoOfDoors" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Select Drive Type </label><span>*</span>
+                                                        <select asp-for="Vehicle.DriveTypeId">
+                                                            @*<option value="0" selected>Select</option>*@
+
+                                                            @foreach (var item in ViewBag.driveTypes)
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Enter Engine Capacity (sm<sup>3</sup>)</label><span>*</span>
+                                                        <input asp-for="Vehicle.EngineCapacity" />
+                                                        <span asp-validation-for="Vehicle.EngineCapacity" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Vehicle Status </label><span>*</span>
+                                                        <select asp-for="Vehicle.Status">
+                                                            <option value="used">Used</option>
+                                                            <option value="new">New</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <label>Highway Fuel Economy (L/100km) </label><span>*</span>
+                                                        <input asp-for="Vehicle.HwyFuelEconomy" />
+                                                        <span asp-validation-for="Vehicle.HwyFuelEconomy" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end w-100 px-3">
+                                                    <div id="stp1nxt2" class="costom_nexn_perv">
+                                                        Save & PROCEED to next step
+                                                        <span class="fa fa-angle-right"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Step-2">
+                                            <div class="sec_title">
+                                                <h2>Select Additional Features Of Your Vehicle</h2>
+                                            </div>
+                                            <div class="submitForm_Items row">
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form_item">
+                                                        <input asp-for="Vehicle.VehicleFeatures.ABS" id="chck1" />
+                                                        <label for="chck1">ABS</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="Vehicle.VehicleFeatures.AlloyWheels" id="chck2" />
+                                                        <label for="chck2">Alloy Wheels</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.PassengerAirbag" id="chck3" />
+                                                        <label for="chck3">Passenger Airbag</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.HeatedDoorMirrors" id="chck4" />
+                                                        <label for="chck4">Heated Door Mirrors</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.AirConditioning" id="chck5" />
+                                                        <label for="chck5">Air Conditioning</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.TripComputer" id="chck6" />
+                                                        <label for="chck6">Trip Computer</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.SideAirbags" id="chck7" />
+                                                        <label for="chck7">Side Airbags</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.AudioRemoteControl" id="chck8" />
+                                                        <label for="chck8">Audio Remote Control</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.FoldingRearSeats" id="chck9" />
+                                                        <label for="chck9">Folding Rear Seats</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.CentralLockingKeyless" id="chck10" />
+                                                        <label for="chck10">Central Locking - Keyless</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.WeatherShields" id="chck11" />
+                                                        <label for="chck11">Weather Shields</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.EngineImmobiliser" id="chck13" />
+                                                        <label for="chck13">Engine Immobiliser</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.FogLamps" id="chck14" />
+                                                        <label for="chck14">Fog Lamps</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.GPSSatelliteNavigation" id="chck15" />
+                                                        <label for="chck15">GPS Satellite Navigation</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.HeadlightCovers" id="chck16" />
+                                                        <label for="chck16">Headlight Covers</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.LeatherSeats" id="chck17" />
+                                                        <label for="chck17">Leather Seats</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.LeatherTrim" id="chck18" />
+                                                        <label for="chck18">Leather Trim</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.RoofDeflector" id="chck19" />
+                                                        <label for="chck19">Roof Deflector</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.RearSpoiler" id="chck20" />
+                                                        <label for="chck20">Rear Spoiler</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.TintedWindows" id="chck21" />
+                                                        <label for="chck21">Tinted Windows</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.TowBar" id="chck22" />
+                                                        <label for="chck22">Tow Bar</label>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="VehicleFeatures.ElectricFrontSeats" id="chck12" />
+                                                        <label for="chck12">Electric Front Seats</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row w-100 mx-0">
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-start w-100 px-3">
+                                                            <div id="stp2per1"
+                                                                 class="costom_nexn_perv pl-0 pr-4">
+                                                                <span class="fa fa-angle-left mr-2"></span>
+                                                                Back
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-end w-100 px-3">
+                                                            <div id="stp2nxt3" class="costom_nexn_perv">
+                                                                Save & PROCEED to next step
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Step-3">
+                                            <div class="sec_title">
+                                                <h2>Upload Your Vehicle Photos</h2>
+                                            </div>
+                                            <div class="sec_subtitle">
+                                                <p>
+                                                    You must choose at least 1 image
+                                                    <br />
+                                                    <br />
+                                                    You can upload upto 5 photos of your vehicle here.
+                                                </p>
+                                            </div>
+                                            <div class="submitForm_Items row mx-0">
+                                                <div id="UploadImg"
+                                                     class="col-12 submitItem_images row">
+                                                    <!-- <div class="submitItemImage">
+                                                      <img src="image/test/5d224a8e5e588.png" alt="" />
+                                                    </div> -->
+                                                </div>
+                                                <div class="col-12 mb-5">
+                                                    <div id="ChoseInput" class="form_item mt-5">
+                                                        <label>
+                                                            CHOOSE A PHOTO
+                                                            <input asp-for="Vehicle.Photos"
+                                                                   id="select_submitImages"
+                                                                   class="d-none"
+                                                                   multiple />
+                                                            <span class="fa fa-angle-right"></span>
+                                                        </label>
+                                                        <span asp-validation-for="Vehicle.Photos" class="text-danger"></span>
+                                                        <p id="Errortxt"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 submitItem_video mb-5">
+                                                    <div class="sec_title">
+                                                        <h2>
+                                                            Please Enter A Hosted Video URL Of Your Vehicle
+                                                        </h2>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur
+                                                            adipisicing elit, sed do eiusmod tempor incididunt
+                                                            ut labore et dolore magna aliqua. Ut enim ad minim
+                                                            veniam, quis nostrud exercitation ullamco laboris
+                                                            nisi ut aliquip ex ea commodo consequat.
+                                                        </p>
+                                                    </div>
+                                                    <div class="form_item">
+                                                        <input asp-for="Vehicle.VideoLink"
+                                                               placeholder="like Youtube or Vimeo Iframe" />
+                                                        <span asp-validation-for="Vehicle.VideoLink" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 submitItem_comment">
+                                                    <div class="sec_title">
+                                                        <h2>
+                                                            Write Some Additional Comments About Your Vehicle
+                                                        </h2>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur
+                                                            adipisicing elit, sed do eiusmod tempor incididunt
+                                                            ut labore et dolore magna aliqua. Ut enim ad minim
+                                                            veniam, quis nostrud exercitation ullamco laboris
+                                                            nisi ut aliquip ex ea commodo consequat.
+                                                        </p>
+                                                    </div>
+                                                    <textarea asp-for="Vehicle.Description" placeholder="write additional comments"></textarea>
+                                                    <span asp-validation-for="Vehicle.Description" class="text-danger"></span>
+                                                </div>
+                                                <div class="row w-100 mx-0">
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-start w-100 px-3">
+                                                            <div id="stp3per2"
+                                                                 class="costom_nexn_perv pl-0 pr-4">
+                                                                <span class="fa fa-angle-left mr-2"></span>
+                                                                Back
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-end w-100 px-3">
+                                                            <div id="stp3nxt4" class="costom_nexn_perv">
+                                                                Save & PROCEED to next step
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Step-4">
+                                            <div class="sec_title">
+                                                <h2>Upload Your Vehicle Photos</h2>
+                                            </div>
+                                            <div class="sec_subtitle">
+                                                <p>
+                                                    Curabitur libero. Donec facilisis velit eu est.
+                                                    Phasellus cons quat. Aenean vitae quam. Vivamus et
+                                                    nunc. Nunc consequsem velde metus imperdiet lacinia.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                                    elit.
+                                                </p>
+                                            </div>
+                                            <div class="submitForm_Items row mx-0">
+                                                <div class="submitItem_price mb-5 mx-0 row">
+                                                    <div class="col-12 col-md-5">
+                                                        <h6>Enter Your Expected Price</h6>
+                                                    </div>
+                                                    <div class="col-12 col-md-7">
+                                                        <div class="price_input">
+                                                            <span class="fa fa-car iconsp"></span>
+                                                            <input asp-for="Vehicle.Price" type="number" />
+                                                            <span asp-validation-for="Vehicle.Price" class="text-danger"></span>
+                                                            <span class="inputprval">
+                                                                IN USD $
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="submitItem_desc mb-5 mx-0 row">
+                                                    <div class="col-12 col-md-6">
+                                                        <div class="form_item">
+                                                            <label>Enter Mileage (km) </label><span>*</span>
+                                                            <input asp-for="Vehicle.Mileage" />
+                                                            <span asp-validation-for="Vehicle.Mileage" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="form_item mt-5">
+                                                            <label for="Ckckques">Do you want a quote price? </label>
+                                                            <input asp-for="Vehicle.QuotePrice" id="Ckckques" class="chcques" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6">
+                                                        <div class="form_item">
+                                                            <label>Select Exterior Color </label><span>*</span>
+                                                            <select asp-for="Vehicle.ExteriorColor">
+                                                                <option>White</option>
+                                                                <option>Purple</option>
+                                                                <option>Gray</option>
+                                                                <option>Pink</option>
+                                                                <option>Blue</option>
+                                                                <option>Silver</option>
+                                                                <option>Orange</option>
+                                                                <option>Black</option>
+                                                                <option>Brown</option>
+                                                                <option>Red</option>
+                                                                <option>Gold</option>
+                                                                <option>Yellow</option>
+                                                                <option>Green</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form_item">
+                                                            <label>Select Interior Color </label><span>*</span>
+                                                            <select asp-for="Vehicle.InteriorColor">
+                                                                <option>White</option>
+                                                                <option>Purple</option>
+                                                                <option>Gray</option>
+                                                                <option>Pink</option>
+                                                                <option>Blue</option>
+                                                                <option>Silver</option>
+                                                                <option>Orange</option>
+                                                                <option>Black</option>
+                                                                <option>Brown</option>
+                                                                <option>Red</option>
+                                                                <option>Gold</option>
+                                                                <option>Yellow</option>
+                                                                <option>Green</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="submitItem_registration mb-5">
+                                                    <div class="sec_title">
+                                                        <h2>Vehicle Registration Details</h2>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p class="">
+                                                            Is your Vehicle registered?
+                                                        </p>
+                                                        <div class="chckitem">
+                                                            <label for="regchck1">Yes</label>
+                                                            @*<input asp-for="Vehicle.Registration"
+                                                                id="regchck1"
+                                                                name="itemregchck" />*@
+                                                            <input asp-for="Vehicle.Registration" type="checkbox" id="regchck1" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="submitItem_reg mb-5 row"
+                                                         style="display: none;">
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form_item">
+                                                                <label>Enter Registerarion Plate Number  </label><span>*</span>
+                                                                <input asp-for="Vehicle.RegistrationPlateNumber" />
+                                                                <span asp-validation-for="Vehicle.RegistrationPlateNumber" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="form_item">
+                                                                <label>Select Registerarion Expiry Month </label><span>*</span>
+                                                                <select asp-for="Vehicle.RegistrationExpiryMonth">
+                                                                    <option value="january">January</option>
+                                                                    <option value="february">February</option>
+                                                                    <option value="march">March</option>
+                                                                    <option value="april">April</option>
+                                                                    <option value="may">May</option>
+                                                                    <option value="june">June</option>
+                                                                    <option value="july">July</option>
+                                                                    <option value="august">August</option>
+                                                                    <option value="september">September</option>
+                                                                    <option value="october">October</option>
+                                                                    <option value="november">November</option>
+                                                                    <option value="december">December</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form_item">
+                                                                <label>Enter Vehicle Registerarion Number </label><span>*</span>
+                                                                <input asp-for="Vehicle.RegistrationNumber" />
+                                                                <span asp-validation-for="Vehicle.RegistrationNumber" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="form_item">
+                                                                <label>Select Registerarion Expiry Year </label><span>*</span>
+                                                                <select asp-for="Vehicle.RegistrationExpiryYear">
+                                                                    <option value="2020">2020</option>
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2014">2014</option>
+                                                                    <option value="2013">2013</option>
+                                                                    <option value="2012">2012</option>
+                                                                    <option value="2011">2011</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="2001">2001</option>
+                                                                    <option value="2000">2000</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="submitItem_contactyou">
+                                                    <div class="sec_title">
+                                                        <h2>Tell Us How Buyers Contact You</h2>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p>
+                                                            Curabitur libero. Donec facilisis velit eu est.
+                                                            Phasellus cons quat aenean vitae quam.
+                                                        </p>
+                                                    </div>
+                                                    <div class="row mx-0">
+                                                        <div class="col-12">
+                                                            <div class="form_item">
+                                                                <label>Vehicle Current Address </label><span>*</span>
+                                                                <input asp-for="Vehicle.CurrentAddress" />
+                                                                <span asp-validation-for="Vehicle.CurrentAddress" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form_item">
+                                                                <div class="form_item">
+                                                                    <label>City / State </label><span>*</span>
+                                                                    <input asp-for="Vehicle.City" />
+                                                                    <span asp-validation-for="Vehicle.City" class="text-danger"></span>
+                                                                </div>
+                                                                <div class="form_item">
+                                                                    <label>Zip Code  </label>
+                                                                    <input asp-for="Vehicle.ZipCode" />
+                                                                    <span asp-validation-for="Vehicle.ZipCode" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="form_item">
+                                                                <div class="form_item">
+                                                                    <label>Enter Your Phone Number </label><span>*</span>
+                                                                    <input asp-for="Vehicle.PhoneNumber" />
+                                                                    <span asp-validation-for="Vehicle.PhoneNumber" class="text-danger"></span>
+                                                                </div>
+                                                                <div class="form_item">
+                                                                    <label>Enter Your Email Address </label><span>*</span>
+                                                                    <input asp-for="Vehicle.Email" />
+                                                                    <span asp-validation-for="Vehicle.Email" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row w-100 mx-0">
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-start w-100 px-3">
+                                                            <div id="stp4per3"
+                                                                 class="costom_nexn_perv pl-0 pr-4">
+                                                                <span class="fa fa-angle-left mr-2"></span>
+                                                                Back
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-end w-100 px-3">
+                                                            <div id="stp4nxt5" class="costom_nexn_perv">
+                                                                Save & PROCEED to next step
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Step-5">
+                                            <div class="sec_title">
+                                                <h2>Upload Your Vehicle Photos</h2>
+                                            </div>
+                                            <div class="sec_subtitle">
+                                                <p>
+                                                    Curabitur libero. Donec facilisis velit eu est.
+                                                    Phasellus cons quat. Aenean vitae quam. Vivamus et
+                                                    nunc. Nunc consequsem velde metus imperdiet lacinia.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing
+                                                    elit.
+                                                </p>
+                                            </div>
+                                            <div class="submitForm_Items">
+                                                <div class="col-12 mb-5">
+                                                    <div class="yourplan">
+                                                        Your current plan:
+                                                        <span id="freeplan">FREE PLAN</span>
+                                                        <span id="premiumplan" style="display: none;">PREMIUM PLAN</span>
+                                                        <!-- <a id="PlanChange">CHANGE</a> -->
+                                                        <label id="PlanChange" for="PlanValue">CHANGE</label>
+                                                        <input asp-for="Vehicle.PlanType" id="PlanValue" style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="submitItem_premiumlistings"
+                                                     style="display: none;">
+                                                    <div class="sec_title">
+                                                        <h2>Premium Listings</h2>
+                                                        <span class="premiumPrice">
+                                                            ( <span class="preprice">$11.50</span>
+                                                            <span class="premonth">Per Month</span> )
+                                                        </span>
+                                                        <span asp-validation-for="Vehicle.CupunCode" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p>
+                                                            Curabitur libero. Donec facilisis velit eu est.
+                                                            Phasellus cons quat. Aenean vitae quam. Vivamus et
+                                                            nunc.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-12 cardtype mb-5">
+                                                        <div class="form_item">
+                                                            <input id="creditcard"
+                                                                   name="precheck"
+                                                                   type="radio" />
+                                                            <label for="creditcard">Credit Card</label>
+                                                        </div>
+                                                        <div class="form_item">
+                                                            <input id="cuponcode"
+                                                                   name="precheck"
+                                                                   type="radio" />
+                                                            <label for="cuponcode">Cupon Code</label>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div id="CuponCodeInput"
+                                                                 class="col-12 col-md-6"
+                                                                 style="display: none;">
+                                                                <div class="form_item cuponcode">
+                                                                    <label>Enter Your Coupon Code</label>
+                                                                    <input asp-for="Vehicle.CupunCode" />
+
+                                                                </div>
+                                                            </div>
+                                                            <div id="Upbtn"
+                                                                 class="col-12 col-md-6"
+                                                                 style="display: none;">
+                                                                <div class="form_item cuponcode">
+                                                                    <a href="#">
+                                                                        PAY NOW & UPGRADE<span class="fa fa-angle-right"></span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="submitItem_freelistings">
+                                                    <div class="sec_title">
+                                                        <h2>Free Listings</h2>
+                                                    </div>
+                                                    <div class="sec_subtitle">
+                                                        <p>
+                                                            Curabitur libero. Donec facilisis velit eu est.
+                                                            Phasellus cons quat. Aenean vitae quam. Vivamus et
+                                                            nunc.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row w-100 mx-0">
+                                                    <div class="col-12 py-3">
+                                                        <ul>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.VehicleManufacturerYear" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.NoOfSeats" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.NoOfDoors" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.NoOfCylinders" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.EngineCapacity" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.CityFuelEconomy" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.HwyFuelEconomy" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.Description" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.CurrentAddress" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.City" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.PhoneNumber" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.Email" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.Price" class="text-danger"></span></li>
+                                                            <li class="text-danger"><span asp-validation-for="Vehicle.Mileage" class="text-danger"></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-start w-100 px-3">
+                                                            <div id="stp5per4"
+                                                                 class="costom_nexn_perv pl-0 pr-4">
+                                                                <span class="fa fa-angle-left mr-2"></span>
+                                                                Back
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 px-0">
+                                                        <div class="d-flex justify-content-end w-100 px-3">
+                                                            <!-- <div id="stp5supmit" class="costom_nexn_perv">
+                                                              PUBLISH MY LISTING NOW
+                                                              <span class="fa fa-angle-right"></span>
+                                                            </div> -->
+                                                            <button type="submit" id="stp5supmit" class="costom_nexn_perv">
+                                                                PUBLISH MY LISTING NOW
+                                                                <span class="fa fa-angle-right"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * * *End- Submit * * * -->
+    }
+    else
+    {
+        <div class="container" style="padding:80px 30px">
+            <div class="row p-5">
+                <div class="alert alert-primary w-100 py-4 text-center" role="alert">
+                    You must have an account to place a car!
+                    <br />
+                    <a asp-controller="User" asp-action="Login">Login</a> if you have an account, <a asp-controller="User" asp-action="Register">Register</a> now if you don't have one
+                </div>
+            </div>
+        </div>
+    }
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+
+    <script>
+    $(function () {
+        $("#SelectMake").change(function () {
+            var url = '@Url.Content("~/")' + "Ajax/ModelFilterByMake";
+            var ddlsource = "#SelectMake";
+            $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $("#SelectModel").empty();
+                $.each(data, function (i, row) {
+                    items += "<option value='" + row.value +" '> " + row.text + "</option>";
+                });
+                $("#SelectModel").html(items);
+            })
+        });
+    });
+    </script>
+
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

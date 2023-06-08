@@ -1,0 +1,226 @@
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\appsettings.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.deps.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.runtimeconfig.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.runtimeconfig.dev.json
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.dll
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.pdb
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.Views.dll
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.Views.pdb
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.csprojAssemblyReference.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorAssemblyInfo.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorAssemblyInfo.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.AssemblyInfoInputs.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.AssemblyInfo.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.TagHelpers.input.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.TagHelpers.output.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorCoreGenerate.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorTargetAssemblyInfo.cache
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorTargetAssemblyInfo.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.Views.pdb
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.dll
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.pdb
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.csproj.CopyComplete
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\HeaderTopBar\Default.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\FooterMain\Default.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\Register.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\Login.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Submit.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Details.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\VehicleList.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Compare.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\MyVehicle.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\FavoriteVehicle.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdateMyVehicle.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\NavMain\Default.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\FooterBottom\Default.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\WebSiteBiography\Biography.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Contact\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedVehicles\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedVehicles\Details.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Users.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Members.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Admin.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\Components\HeaderBio\Default.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Account\MyAccount.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Account\AccountSettings.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\About\AboutUs.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Offers.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersDetails.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersUpdate.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersCreate.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Choose.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\ChooseUpdate.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\ChooseCreate.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\MoreInfo.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\SearchResult.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\MemberDetails.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccountSettings.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\ConfirmEmail.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Update.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Company.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\CompanySettings.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Create.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Details.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedShopProduct\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedShopProduct\Details.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\CompanyDetails.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\WebSiteMails\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\MyProduct.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdateMyProduct.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shops\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shops\CompanyDetails.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Cart\Index.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\UserVehicles.cshtml.g.cs
+D:\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\UserVehicleDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\appsettings.json
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.deps.json
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.runtimeconfig.json
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.runtimeconfig.dev.json
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.dll
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.pdb
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.Views.dll
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\bin\Debug\netcoreapp2.2\AutoClub.Views.pdb
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.csproj.AssemblyReference.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.AssemblyInfoInputs.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.AssemblyInfo.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.csproj.CoreCompileInputs.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorAssemblyInfo.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorAssemblyInfo.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.TagHelpers.input.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.TagHelpers.output.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorCoreGenerate.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Choose.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\ChooseCreate.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\ChooseUpdate.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\MoreInfo.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\Offers.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersCreate.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\About\OffersUpdate.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Account\AccountSettings.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Account\MyAccount.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\DriveType\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\FuelType\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\MainSlider\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Make\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\Components\HeaderBio\Default.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopCategory\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ShopSubCategory\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\TransmissionType\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedShopProduct\Details.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedShopProduct\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedVehicles\Details.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\UnapprovedVehicles\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Admin.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Company.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\CompanyDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\MemberDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Members.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\Users.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\UserVehicleDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\User\UserVehicles.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\VehicleModel\Update.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\WebSiteBiography\Biography.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\WebSiteMails\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\About\AboutUs.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccountSettings.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\CompanySettings.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\FavoriteVehicle.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\MyProduct.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\MyVehicle.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdateMyProduct.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdateMyVehicle.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Cart\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Contact\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\SearchResult.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Home\VehicleList.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\FooterBottom\Default.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\FooterMain\Default.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\HeaderTopBar\Default.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\NavMain\Default.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shops\CompanyDetails.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shops\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Create.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Details.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Shop\Index.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\ConfirmEmail.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\Login.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\User\Register.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Compare.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Details.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\Vehicle\Submit.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorTargetAssemblyInfo.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.RazorTargetAssemblyInfo.cs
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.Views.pdb
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.dll
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.pdb
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.genruntimeconfig.cache
+D:\My Lessons\HomeWork\P213\Final Project\Final Project AutoClub\AutoClub\AutoClub\obj\Debug\netcoreapp2.2\AutoClub.csproj.CopyComplete

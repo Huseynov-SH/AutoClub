@@ -1,0 +1,474 @@
+﻿@model AutoClub.ViewModels.HomeVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+    <link rel="shortcut icon" href="~/image/logo/favicon.png">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Toastr * * * -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+          rel="stylesheet" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    <!-- * * *Start- Page Header * * * -->
+    <section id="PageHeader">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-12 col-md-3">
+                    <div class="text">
+                        <h1>Auto Listings</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="item_count">
+                        <h3>Your search returned @Model.Vehicles.Count() results</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *Start- Page Header * * * -->
+    <!-- * * *Start- Page Root * * * -->
+    <section id="ItelListRoot">
+        <div class="container">
+            <a href="" style="color: #999999;">Home</a>
+            <i class="fa fa-angle-right" style="color: #999999" ;></i>
+            <a href="" style="color: #545454">Search Results</a>
+        </div>
+    </section>
+    <!-- * * *End- Page Root * * * -->
+    <!-- * * *Start- Info Bar * * * -->
+    <section id="InfoBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 infoLeft">
+                    <div class="compare_items">
+                        <a asp-controller="Vehicle" asp-action="Compare">
+                            <i class="fa fa-compress"></i>
+                            COMPARE VEHICLES
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 infoRight">
+                    <div class="infoBar_selects">
+                        <form action="" class="row justify-content-between m-0">
+                            <div class="listType">
+                                <span style="margin-right: 20px;">SELECT VIEW</span>
+                                <a href="" class="viewTable active">
+                                    <i class="fa fa-table"></i>
+                                </a>
+                                <a href="" class="viewList"><i class="fa fa-list"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Info Bar * * * -->
+    <!-- * * *Start- Items * * * -->
+    <section id="Items">
+        <div class="container-fluid custom_con">
+            <div class="row">
+                <!-- * * * Premium * * * -->
+                <div class="col-12">
+                    <div class="row">
+                        @{int premiumVehicle = 0; }
+                        @foreach (var vehicle in Model.Vehicles)
+                        {
+                            if (vehicle.PlanType == true)
+                            {
+                                premiumVehicle += 1;
+                                if (premiumVehicle <= 4)
+                                {
+                                    <div id="Item" class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div id="ItemCart" class="itemCatr w-100">
+                                            <div id="ItemImg" class="item_img w-100">
+                                                @{int imgCount = 0;}
+                                                @foreach (var vehicleImage in Model.VehicleImages)
+                                                {
+                                                    if (vehicleImage.VehicleId == vehicle.Id)
+                                                    {
+                                                        imgCount += 1;
+                                                        if (imgCount == 1)
+                                                        {
+                                                            <img src="~/image/Items/@vehicleImage.Name" alt="" />
+                                                        }
+                                                    }
+                                                }
+                                                <span class="listingType">PREMIUM</span>
+                                                <span class="sheredate">@vehicle.CreateDate.ToString("d")</span>
+                                            </div>
+                                            <div id="ItemInfo" class="item_info">
+                                                <div class="info_title">
+                                                    @foreach (var item in Model.Makes)
+                                                    {
+                                                        if (item.Id == vehicle.VehicleModel.MakeId)
+                                                        {
+                                                            <h2>@item.Name @vehicle.VehicleModel.Name</h2>
+                                                        };
+                                                    }
+                                                </div>
+                                                <div class="item_description row">
+                                                    <div class="col-12">
+                                                        <ul class="row px-3">
+                                                            <li class="col-6 px-1" style="list-style:none">
+                                                                <ul>
+                                                                    <li>@vehicle.VehicleManufacturerYear</li>
+                                                                    <li>@vehicle.Status</li>
+                                                                    <li>@vehicle.DriveType.Name</li>
+                                                                    <li>@vehicle.FuelType.Name</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="col-6 px-1" style="list-style:none">
+                                                                <ul>
+                                                                    <li>@vehicle.ExteriorColor</li>
+                                                                    <li>@vehicle.BodyType.Name</li>
+                                                                    <li>City FE @vehicle.CityFuelEconomy L</li>
+                                                                    <li>HWY FE @vehicle.HwyFuelEconomy L</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-12 d-flex justify-content-around">
+                                                        <h5 class="item_price">$@vehicle.Price</h5>
+                                                        <div class="item_km">
+                                                            <i class="fa fa-tachometer"></i>
+                                                            <p>@vehicle.Mileage KM</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 px-2">
+                                                        <div class="col-12 p-0">
+                                                            <a asp-controller="Ajax" asp-action="AddCompare" asp-route-id="@vehicle.Id" class="vd w-100 addCompare">
+                                                                Add Compare<span class="fas fa-plus"></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-12 p-0">
+                                                            <a asp-controller="Vehicle" asp-action="Details" asp-route-id="@vehicle.Id" class="ac w-100">
+                                                                VIEW DETAILS<span class="fa fa-angle-right"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            };
+                        }
+                    </div>
+                </div>
+                <!-- * * * All * * * -->
+                <div id="Items" class="col-12 col-md-8 col-lg-9">
+                    <div id="All">
+                        <div class="row">
+                            @foreach (var vehicle in Model.Vehicles)
+                            {
+                                <div id="Item" class="col-12 col-md-6 col-lg-4">
+                                    <div id="ItemCart" class="itemCatr w-100">
+                                        <div id="ItemImg" class="item_img w-100">
+                                            @{int imgCount = 0;}
+                                            @foreach (var vehicleImage in Model.VehicleImages)
+                                            {
+                                                if (vehicleImage.VehicleId == vehicle.Id)
+                                                {
+                                                    imgCount += 1;
+                                                    if (imgCount == 1)
+                                                    {
+                                                        <img src="~/image/Items/@vehicleImage.Name" alt="" />
+                                                    }
+                                                }
+                                            }
+                                            @if (vehicle.PlanType)
+                                            {
+                                                <span class="listingType">PREMIUM</span>
+                                            }
+                                            <span class="sheredate">@vehicle.CreateDate.ToString("d")</span>
+                                        </div>
+                                        <div id="ItemInfo" class="item_info">
+                                            <div class="info_title">
+                                                @foreach (var item in Model.Makes)
+                                                {
+                                                    if (item.Id == vehicle.VehicleModel.MakeId)
+                                                    {
+                                                        <h2>@item.Name @vehicle.VehicleModel.Name</h2>
+                                                    };
+                                                }
+                                            </div>
+                                            <div class="item_description row">
+                                                <div class="col-12">
+                                                    <ul class="row px-3">
+                                                        <li class="col-6 px-1" style="list-style:none">
+                                                            <ul>
+                                                                <li>@vehicle.VehicleManufacturerYear</li>
+                                                                <li>@vehicle.Status</li>
+                                                                <li>@vehicle.DriveType.Name</li>
+                                                                <li>@vehicle.FuelType.Name</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="col-6 px-1" style="list-style:none">
+                                                            <ul>
+                                                                <li>@vehicle.ExteriorColor</li>
+                                                                <li>@vehicle.BodyType.Name</li>
+                                                                <li>City FE @vehicle.CityFuelEconomy L</li>
+                                                                <li>HWY FE @vehicle.HwyFuelEconomy L</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-around">
+                                                    <h5 class="item_price">$@vehicle.Price</h5>
+                                                    <div class="item_km">
+                                                        <i class="fa fa-tachometer"></i>
+                                                        <p>@vehicle.Mileage KM</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 px-2">
+                                                    <div class="col-12 p-0">
+                                                        <a asp-controller="Ajax" asp-action="AddCompare" asp-route-id="@vehicle.Id" class="vd w-100 addCompare">
+                                                            Add Compare<span class="fas fa-plus"></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-12 p-0">
+                                                        <a asp-controller="Vehicle" asp-action="Details" asp-route-id="@vehicle.Id" class="ac w-100">
+                                                            VIEW DETAILS<span class="fa fa-angle-right"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <aside>
+                        <h2>REFINE YOUR SEARCH</h2>
+                        <div class="asideMain">
+                            <form action="SearchResult">
+                                <div class="searchBody">
+                                    <div class="searchItem">
+                                        <label>SELECT A MAKE</label>
+                                        <div class="div">
+                                            <select asp-for="VehicleSearchModel.Make" asp-items="@(new SelectList(ViewBag.make,"Id","Name"))" id="SelectMake">
+                                                <option value="0" selected="">Any Make</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>SELECT A MODEL</label>
+                                        <div>
+                                            <select asp-for="VehicleSearchModel.Model" asp-items="@(new SelectList(string.Empty,"Id","Name"))" id="SelectModel">
+                                                <option value="0" selected="">Any Model</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>PRICE RANGE</label>
+                                        <div>
+                                            <div class="range-slider">
+                                                <input type="text" class="js-range-slider" value="" />
+                                            </div>
+                                            <div class="extra-controls d-flex justify-content-around mb-4">
+                                                <input asp-for="VehicleSearchModel.PriceFrom" style="width: 35%; text-align: center;"
+                                                       type="text"
+                                                       class="js-input-from"
+                                                       value="0" />
+                                                <span style="font-weight: bold;">-</span>
+                                                <input asp-for="VehicleSearchModel.PriceTo" style="width: 35%; text-align: center;"
+                                                       type="text"
+                                                       class="js-input-to"
+                                                       value="0" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>VEHICLE TYPE</label>
+                                        <div>
+                                            <select asp-for="VehicleSearchModel.BodyType" class="">
+                                                <option value="0" selected="">Any Type</option>
+                                                <option value="1">Pickup</option>
+                                                <option value="2">Suv</option>
+                                                <option value="3">Coupe</option>
+                                                <option value="4">Convertible</option>
+                                                <option value="5">Sedan</option>
+                                                <option value="6">Minicar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>VEHICLE STATUS</label>
+                                        <div>
+                                            <select asp-for="VehicleSearchModel.Status" id="">
+                                                <option value="" selected="">Vehicle Status</option>
+                                                <option value="new">New</option>
+                                                <option value="used">Used</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>Min Year</label>
+                                        <div>
+                                            <input asp-for="VehicleSearchModel.MinYear" type="number" placeholder="Min Year">
+                                        </div>
+                                    </div>
+                                    <div class="searchItem">
+                                        <label>Max Year</label>
+                                        <div>
+                                            <input asp-for="VehicleSearchModel.MaxYear" type="number" placeholder="Max Year">
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <button type="submit">
+                                        FILTER VEHICLES
+                                        <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </footer>
+                            </form>
+                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="asideSell">
+                                <div class="sell_Img">
+                                    <h3>SELL YOUR CAR</h3>
+                                </div>
+                                <div class="sell_Info">
+                                    <p>
+                                        Nam tellus enimds eleifend dignis lsim biben edum tristique
+                                        sed metus fusce Maecenas lobortis sed metus fusce Maecenas lobortis.
+                                    </p>
+                                    <a asp-controller="Vehicle" asp-action="Submit">
+                                        GO TO SUBMIT
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="asideSell">
+                                <div class="sell_Img">
+                                    <h3>SELL YOUR CAR</h3>
+                                </div>
+                                <div class="sell_Info">
+                                    <p>
+                                        Nam tellus enimds eleifend dignis lsim biben edum tristique
+                                        sed metus fusce Maecenas lobortis sed metus fusce Maecenas lobortis.
+                                    </p>
+                                    <a asp-controller="User" asp-action="Register">
+                                        REGISTER NOW
+                                        <span class="fa fa-angle-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Items * * * -->
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Toastr * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+
+    <script>
+    $(function () {
+        $("#SelectMake").change(function () {
+            var url = '@Url.Content("~/")' + "Ajax/ModelFilterByMake";
+            var ddlsource = "#SelectMake";
+            $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $("#SelectModel").empty();
+                $.each(data, function (i, row) {
+                    items += "<option value='" + row.value + " '> " + row.text + "</option>";
+                });
+                $("#SelectModel").html(items);
+            })
+        });
+    });
+    </script>
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

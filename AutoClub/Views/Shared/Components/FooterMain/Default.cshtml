@@ -1,0 +1,64 @@
+﻿@model AutoClub.Models.WebSiteBio;
+@{
+    Layout = null;
+}
+
+<div class="footet_main">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3 px-0">
+                <div class="info_aside">
+                    <div class="aside_hours">
+                        <h3>OPENING HOURS</h3>
+                        <div class="aside_hours_item">
+                            <h6>Sales Department</h6>
+                            <p>
+                                @Model.OpeningHoursSales
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="aside_about">
+                        <h3>About us</h3>
+                        <p>
+                            @Model.AboutUs
+                        </p>
+                        <a asp-controller="About" asp-action="AboutUs">
+                            Read More
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 px-0"></div>
+            <div class="col-12 col-md-3 px-0"></div>
+            <div class="col-12 col-md-3 px-2">
+                <h3>CONTACT US</h3>
+                <address>
+                    <div class="address_item_location mb-2">
+                        <span class="fa fa-map-marker"></span>
+                        <em>
+                            @Model.Address
+                        </em>
+                    </div>
+                    <div class="address_item_phone mb-2">
+                        <span class="fa fa-phone"></span>
+                        <em>
+                            Phone: @Model.Phone
+                        </em>
+                    </div>
+                    <div class="address_item_fax mb-2">
+                        <span class="fa fa-fax"></span>
+                        <em>
+                            FAX: @Model.Fax
+                        </em>
+                    </div>
+                    <div class="address_item_email mb-2"></div>
+                </address>
+                <div class="location_map">
+                    <a asp-controller="Contact" asp-action="Index">Open Location Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

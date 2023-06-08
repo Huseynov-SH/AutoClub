@@ -1,0 +1,158 @@
+﻿@model AutoClub.Models.WebSiteBio;
+@{
+    ViewData["Title"] = "Biography";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-10 layout-spacing">
+        <form method="post">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Biography</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Location</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                        </div>
+                        <input asp-for="Address" class="form-control" placeholder="Address" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Address" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Phone</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                        </div>
+                        <input asp-for="Phone" class="form-control" placeholder="Phone" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Phone" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Fax</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></span>
+                        </div>
+                        <input asp-for="Fax" class="form-control" placeholder="FAX" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Fax" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Email</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg></span>
+                        </div>
+                        <input asp-for="Email" class="form-control" placeholder="Email" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Email" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Opening Hours Sales</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                        </div>
+                        <input asp-for="OpeningHoursSales" class="form-control" placeholder="Opening Hours Sales" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="OpeningHoursSales" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Social</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Facebook</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+                        </div>
+                        <input asp-for="FacebookLink" class="form-control" placeholder="Facebook" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="FacebookLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Twitter</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></span>
+                        </div>
+                        <input asp-for="TwitterLink" class="form-control" placeholder="Twitter" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="TwitterLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Google Plus</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chrome"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg></span>
+                        </div>
+                        <input asp-for="GooglePlusLink" class="form-control" placeholder="Google Plus" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="GooglePlusLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Instagram</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></span>
+                        </div>
+                        <input asp-for="InstagramLink" class="form-control" placeholder="Instagram" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="InstagramLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Youtube</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></span>
+                        </div>
+                        <input asp-for="YoutubeLink" class="form-control" placeholder="Youtube" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="YoutubeLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Skype</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
+                        </div>
+                        <input asp-for="SkypeLink" class="form-control" placeholder="Skype" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="SkypeLink" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Contact</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="">Copyright</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                        </div>
+                        <input asp-for="Copyright" class="form-control" placeholder="Copyright" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Copyright" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Map Location Link</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg></span>
+                        </div>
+                        <input asp-for="LocationMap" class="form-control" placeholder="Map Location Link" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="LocationMap" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">About</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-center"><line x1="18" y1="10" x2="6" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="18" y1="18" x2="6" y2="18"></line></svg></span>
+                        </div>
+                        <textarea asp-for="AboutUs" class="form-control" placeholder="About" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="AboutUs" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="input-group my-4">
+                        <button class="btn btn-outline-primary btn-block my-3">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+

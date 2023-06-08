@@ -1,0 +1,51 @@
+﻿@model AutoClub.Models.AboutUsOffers;
+@{
+    ViewData["Title"] = "OffersUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-11 layout-spacing">
+        <form method="post" enctype="multipart/form-data">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <p class="text-center">Current Image</p>
+                    <div class="avatar avatar-xl row justify-content-around">
+                        <img src="/image/About/@Model.Image" class="rounded" width="250">
+                    </div>
+                    <p class="">New Image</p>
+                    <div class="input-group mb-4">
+                        <input asp-for="Photo" class="form-control-file" id="exampleFormControlFile1">
+                        <span asp-validation-for="Photo" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Section</p>
+                    <div class="input-group mb-4">
+                        <input asp-for="OffersSection" id="t-text" class="form-control">
+                        <span asp-validation-for="OffersSection" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Title</p>
+                    <div class="input-group mb-4">
+                        <input asp-for="OffersTitle" id="t-text" class="form-control">
+                        <span asp-validation-for="OffersTitle" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Details</p>
+                    <div class="input-group mb-4">
+                        <textarea asp-for="OffersDescription" id="t-text" class="form-control"></textarea>
+                        <span asp-validation-for="OffersDescription" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-outline-primary btn-block my-3">Save changes</button>
+                        <br />
+                        <a asp-controller="About" asp-action="Offers" class="btn btn-outline-secondary btn-block">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+

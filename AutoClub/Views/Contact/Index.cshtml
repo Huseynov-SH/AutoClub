@@ -1,0 +1,236 @@
+﻿@model AutoClub.ViewModels.ContactVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+    <link rel="shortcut icon" href="~/image/logo/favicon.png">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    <!-- * * *Start- Page Header * * * -->
+    <section id="ContactPageHeader">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-12 col-md-4">
+                    <div class="text">
+                        <h1>Contact Us</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="text2">
+                        <h3>Get In Touch With Us Now</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Page Header * * * -->
+    <!-- * * *Start- Page Root * * * -->
+    <section id="ContactRoot">
+        <div class="container">
+            <a href="" style="color: #999999;">Home</a>
+            <i class="fa fa-angle-right" style="color: #999999" ;></i>
+            <a href="" style="color: #545454">Contact Us</a>
+        </div>
+    </section>
+    <!-- * * *End- Page Root * * * -->
+    <!-- * * *Start- Contact Map * * * -->
+    <section id="ContactMap">
+        <div class="container">
+            <div id="Map">
+                <iframe src="@Model.webSiteBio.LocationMap"
+                        width="600"
+                        height="450"
+                        frameborder="0"
+                        style="border:0;"
+                        allowfullscreen=""
+                        aria-hidden="false"
+                        tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Contact Map * * * -->
+    <!-- * * *Start- Contact * * * -->
+    <section id="Contact">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="contact_form">
+                        <div class="form_header">
+                            <h2>Contact Form</h2>
+                        </div>
+                        <div class="form_subheader">
+                            <p>
+                                Enter your comments through the form below, and our customer
+                                service professionals will contact you as soon as possible.
+                            </p>
+                        </div>
+                        <form method="post">
+                            <div class="form_items col-12">
+                                <div class="form_item">
+                                    <select asp-for="contactMessage.Type">
+                                        <option value="1">Other</option>
+                                        <option value="2">Company Application</option>
+                                    </select>
+                                </div>
+                                <div class="form_item">
+                                    <input asp-for="contactMessage.UserName" placeholder="USER NAME" />
+                                    <span asp-validation-for="contactMessage.UserName" class="text-danger px-3"></span>
+                                </div>
+                                <div class="form_item">
+                                    <input asp-for="contactMessage.Email" type="email" placeholder="EMAIL ADDRESS %" />
+                                    <span asp-validation-for="contactMessage.Email" class="text-danger px-3"></span>
+
+                                </div>
+                                <div class="form_item">
+                                    <input asp-for="contactMessage.Phone" placeholder="PHONE NO." />
+                                    <span asp-validation-for="contactMessage.Phone" class="text-danger px-3"></span>
+
+                                </div>
+                                <div class="form_item">
+                                    <textarea asp-for="contactMessage.Message" placeholder="COMMENT/SUGGESTIONS/FEEDBACK"></textarea>
+                                    <span asp-validation-for="contactMessage.Message" class="text-danger px-3"></span>
+
+                                </div>
+                                <div class="form_item mb-3">
+                                    <button type="submit">
+                                        Submit Now <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 pl-5">
+                    <div class="sectitle">
+                        <h2>opening hours</h2>
+                    </div>
+                    <div class="address_hours row">
+                        <div class="col-12 col-md-6">
+                            <h5>Sales Department</h5>
+                            <p>@Model.webSiteBio.OpeningHoursSales</p>
+                        </div>
+                    </div>
+                    <div class="sectitle mt-5">
+                        <h2>Address / Phone</h2>
+                    </div>
+                    <div class="address_info row">
+                        <div class="col-12 row">
+                            <div class="col-3 px-0">
+                                <span class="fa fa-home"></span> Address
+                            </div>
+                            <div class="col-9">
+                                <p>
+                                    @Model.webSiteBio.Address
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 row">
+                            <div class="col-3 px-0">
+                                <span class="fa fa-phone"></span> Phone
+                            </div>
+                            <div class="col-9"><p>@Model.webSiteBio.Phone</p></div>
+                        </div>
+                        <div class="col-12 row">
+                            <div class="col-3 px-0">
+                                <span class="fa fa-fax"></span> Fax
+                            </div>
+                            <div class="col-9"><p>@Model.webSiteBio.Fax</p></div>
+                        </div>
+                        <div class="col-12 row">
+                            <div class="col-3 px-0">
+                                <span class="fa fa-envelope"></span> Email
+                            </div>
+                            <div class="col-9"><p>@Model.webSiteBio.Email</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Contact * * * -->
+
+    <script>
+        document.getElementById("Nav_Link_Contact").classList.add("active");
+    </script>
+
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

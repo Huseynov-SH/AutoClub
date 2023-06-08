@@ -1,0 +1,951 @@
+﻿@model AutoClub.ViewModels.DetailsVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+    <link rel="shortcut icon" href="~/image/logo/favicon.png">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Toastr * * * -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+          rel="stylesheet" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    <!-- * * *Start- Page Header * * * -->
+    <section id="PageHeader">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-12 col-md-4">
+                    <div class="text">
+                        <h1>Vehicle Details Page</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Page Header * * * -->
+    <!-- * * *Start- Page Root * * * -->
+    <section id="ItemDetailsRoot">
+        <div class="container">
+            <a href="" style="color: #999999;">Home</a>
+            <i class="fa fa-angle-right" style="color: #999999" ;></i>
+            <a href="" style="color: #545454">Search Results</a>
+            <i class="fa fa-angle-right" style="color: #999999" ;></i>
+            <a href="" style="color: #545454">Search Results</a>
+        </div>
+    </section>
+    <!-- * * *End- Page Root * * * -->
+    <!-- * * *Start- Info Bar * * * -->
+    <section id="DetailsInfoBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-3">
+                    @if (Model.Vehicle.PlanType)
+                    {
+                        <div class="detailType">Premium Listing</div>
+                    }
+                    else
+                    {
+                        <div class="detailType">Free Listing</div>
+                    }
+                </div>
+                <div class="col-12 col-sm-9 row justify-content-end">
+                    <div class="infoBar_btns">
+                        <a href="" class="cusbtn">
+                            PRINT THIS PAGE
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                        <a asp-controller="Ajax" asp-action="AddCompare" asp-route-id="@Model.Vehicle.Id" class="cusbtn addCompare">
+                            ADD COMPARE
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                        <a asp-controller="Ajax" asp-action="AddFavoriteVehicle" asp-route-id="@Model.Vehicle.Id" class="cusbtn addFavoriteVehicle">
+                            ADD TO FAVOURITES
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                        <a href="" class="cusbtn">
+                            SHARE THIS VEHICLE
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Info Bar * * * -->
+    <!-- * * *Start- Details * * * -->
+    <section id="Details">
+        <div class="container-fluid">
+            <div class="detailsHeader mx-5">
+                <div class="row">
+                    <div class="col-12 col-sm-9 row m-0 align-items-center">
+                        <div class="head_title">
+                            <h1>
+                                @foreach (var item in ViewBag.make)
+                                {
+                                    if (item.Id == Model.Vehicle.VehicleModel.MakeId)
+                                    {
+                                        @item.Name
+                                    }
+                                }
+                                @Model.Vehicle.VehicleModel.Name
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-3">
+                        <div class="head_price">
+                            <div>$@Model.Vehicle.Price</div>
+                            <p>@Model.Vehicle.CreateDate.ToString("g")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainDetail px-5">
+                <div class="row mx-0">
+                    <div class="Left slider col-12 col-md-8 mb-5">
+                        <div class="row">
+                            <div class="col-12 col-sm-10">
+                                <div class="mainImg">
+                                    <div id="carouselExampleIndicators"
+                                         class="carousel slide"
+                                         data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            @{ int firstactive = 0;}
+                                            @foreach (var item in Model.VehicleImages)
+                                            {
+                                                if (item.VehicleId == Model.Vehicle.Id)
+                                                {
+                                                    @if (firstactive == 0)
+                                                    {
+                                                        <div class="carousel-item active">
+                                                            <img class="d-block w-100"
+                                                                 src="~/image/Items/@item.Name"
+                                                                 alt="First slide" />
+                                                            @if (Model.Vehicle.VideoLink != null)
+                                                            {
+                                                                <a data-toggle="modal"
+                                                                   data-target="#VideoModal"
+                                                                   class="videolink">
+                                                                    <span class="fa fa-film"></span>
+                                                                    VIDEO
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                        firstactive += 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="carousel-item">
+                                                            <img class="d-block w-100"
+                                                                 src="~/image/Items/@item.Name"
+                                                                 alt="First slide" />
+                                                            @if (Model.Vehicle.VideoLink != null)
+                                                            {
+                                                                <a data-toggle="modal"
+                                                                   data-target="#VideoModal"
+                                                                   class="videolink">
+                                                                    <span class="fa fa-film"></span>
+                                                                    VIDEO
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    }
+
+                                                }
+                                            }
+                                            @{firstactive = 0; }
+                                        </div>
+                                    </div>
+                                    <!-- Video Modal -->
+                                    <div class="modal fade" id="VideoModal" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title mt-3">Video</h4>
+                                                    <button type="button"
+                                                            class="close my-0"
+                                                            data-dismiss="modal">
+                                                        &times;
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe height="350" src="@Model.Vehicle.VideoLink"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                            class="btn btn-default"
+                                                            data-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="verRes col-2">
+                                <div class="verticalImgs">
+                                    <ol class="carousel-indicators row">
+                                        @{ int imgcount = 0;}
+                                        @foreach (var item in Model.VehicleImages)
+                                        {
+                                            if (item.VehicleId == Model.Vehicle.Id)
+                                            {
+                                                @if (firstactive == 0)
+                                                {
+                                                    <li data-target="#carouselExampleIndicators"
+                                                        data-slide-to="@imgcount"
+                                                        class="col-12 verticalItem active">
+                                                        <img src="~/image/Items/@item.Name" alt="" />
+                                                    </li>
+                                                    firstactive += 1;
+                                                    imgcount++;
+                                                }
+                                                else
+                                                {
+                                                    <li data-target="#carouselExampleIndicators"
+                                                        data-slide-to="@imgcount"
+                                                        class="col-12 verticalItem">
+                                                        <img src="~/image/Items/@item.Name" alt="" />
+                                                    </li>
+                                                    imgcount++;
+                                                }
+                                            }
+                                        }
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Right col-12 col-md-4">
+                        @if (Model.Vehicle.QuotePrice)
+                        {
+                            <div class="col-12 trade">
+                                <a data-toggle="modal" data-target="#myModal">
+                                    Make an offer price
+                                    <span><i class="fas fa-coins"></i></span>
+                                </a>
+                                <!-- Modal -->
+                                <div class="trademodal">
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <div class="modal-content">
+                                                    <div class="trademodal_header">
+                                                        <div class="header_icon">
+                                                            <i class="fas fa-donate"></i>
+                                                        </div>
+                                                        <div class="header_context">
+                                                            <h3>Offer Price</h3>
+                                                            <span>
+                                                                @foreach (var item in ViewBag.make)
+                                                                {
+                                                                    if (item.Id == Model.Vehicle.VehicleModel.MakeId)
+                                                                    {
+                                                                        @item.Name
+                                                                    }
+                                                                }
+                                                                @Model.Vehicle.VehicleModel.Name @Model.Vehicle.VehicleManufacturerYear
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="trademodal_form">
+                                                        <form method="post">
+                                                            <div class="row">
+                                                                <div class="col-12 d-none">
+                                                                    <div class="form_item">
+                                                                        <label for="">Email</label>
+                                                                        <input asp-for="OfferPriceMessage.type" value="1" />
+                                                                        <input asp-for="OfferPriceMessage.EmailTo" value="@Model.Vehicle.Email" />
+                                                                        <input asp-for="OfferPriceMessage.VehicleId" value="@Model.Vehicle.Id" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-12">
+                                                                    <div class="form_item">
+                                                                        <label for="">Email</label>
+                                                                        <input type="email" asp-for="OfferPriceMessage.EmailFrom" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-6">
+                                                                    <div class="form_item">
+                                                                        <label for="">Phone Number</label>
+                                                                        <input asp-for="OfferPriceMessage.Phone" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-6">
+                                                                    <div class="form_item">
+                                                                        <label for="">Trade price</label>
+                                                                        <input type="number" asp-for="OfferPriceMessage.Message" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form_item">
+                                                                        <button id="OfferPriceSend" type="submit">Request</button>
+                                                                    </div>
+                                                                    <span asp-validation-for="OfferPriceMessage.EmailFrom"></span>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="modal-content">
+                                                    <div class="trademodal_header">
+                                                        <div class="header_icon">
+                                                            <i class="fas fa-donate"></i>
+                                                        </div>
+                                                        <div class="header_context">
+                                                            <h3>Offer Price</h3>
+                                                            <span>
+                                                                @foreach (var item in ViewBag.make)
+                                                                {
+                                                                    if (item.Id == Model.Vehicle.VehicleModel.MakeId)
+                                                                    {
+                                                                        @item.Name
+                                                                    }
+                                                                }
+                                                                @Model.Vehicle.VehicleModel.Name @Model.Vehicle.VehicleManufacturerYear
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="trademodal_form">
+                                                        <div class="alert alert-primary" role="alert">
+                                                            <a asp-controller="User" asp-action="Register">You must register to make a bid price</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <aside>
+                            <div class="mainDetails">
+                                <h2 class="detailsTitle">Description</h2>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Make</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+                                            @foreach (var item in ViewBag.make)
+                                            {
+                                                if (item.Id == Model.Vehicle.VehicleModel.MakeId)
+                                                {
+                                                    @item.Name
+                                                }
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Model</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.VehicleModel.Name</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Manufacturer Year</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.VehicleManufacturerYear</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Kilometres</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.Mileage km</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Body Type</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.BodyType.Name</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>No. of Cylinders</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.NoOfCylinders</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Engine Capacity</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.EngineCapacity sm<sup>3</sup></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Drivetrain</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.DriveType.Name</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Transmission</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.TransmissionType.Name</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Exterior Color</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.ExteriorColor</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Interior color</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.InteriorColor</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Passangers/Doors</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.NoOfSeats Passengers / @Model.Vehicle.NoOfDoors Doors</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Fuel Type</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.FuelType.Name</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>City Fuel Economy</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.CityFuelEconomy L/100km</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Hwy Fuel Economy</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>@Model.Vehicle.HwyFuelEconomy L/100km</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="subDetails px-5">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-8">
+                        <div class="characteristicsDetails row">
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-car"></span></div>
+                                    <p>@Model.Vehicle.Status</p>
+                                </div>
+                                <div class="characteristics_one_bottom">Status</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-trophy"></span></div>
+                                    <p>@Model.Vehicle.Mileage KM</p>
+                                </div>
+                                <div class="characteristics_one_bottom">Warrenty</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-at"></span></div>
+                                    <p>@Model.Vehicle.TransmissionType.Name</p>
+                                </div>
+                                <div class="characteristics_one_bottom">Transmission</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-car"></span></div>
+                                    <p>@Model.Vehicle.DriveType.Name</p>
+                                </div>
+                                <div class="characteristics_one_bottom">Drivetrain</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-user"></span></div>
+                                    <p>@Model.Vehicle.NoOfSeats</p>
+                                </div>
+                                <div class="characteristics_one_bottom">Passangers</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-fire-extinguisher"></span></div>
+                                    <p>@Model.Vehicle.CityFuelEconomy L</p>
+                                </div>
+                                <div class="characteristics_one_bottom">In City</div>
+                            </div>
+                            <div class="characteristics_one">
+                                <div class="characteristics_one_top">
+                                    <div><span class="fa fa-fire-extinguisher"></span></div>
+                                    <p>@Model.Vehicle.HwyFuelEconomy L</p>
+                                </div>
+                                <div class="characteristics_one_bottom">On Highway</div>
+                            </div>
+                        </div>
+                        <div class="textDetails">
+                            <h4>Additional Information</h4>
+                            <div>
+                                <p>
+                                    @Model.Vehicle.Description
+                                </p>
+                            </div>
+                        </div>
+                        <div class="regDet mb-5" style="border-left: 1px solid #eee">
+                            @if (Model.Vehicle.Registration)
+                            {
+                                <div class="col-8 row mb-2">
+                                    <div class="col-6"><h4>Registerarion Plate Number</h4></div>
+                                    <div class="col-6"><h5>@Model.Vehicle.RegistrationPlateNumber</h5></div>
+                                </div>
+                                <div class="col-8 row mb-2">
+                                    <div class="col-6"><h4>Vehicle Registerarion Number</h4></div>
+                                    <div class="col-6"><h5>@Model.Vehicle.RegistrationNumber</h5></div>
+                                </div>
+                                <div class="col-8 row mb-2">
+                                    <div class="col-6"><h4>Registerarion Expiry Month</h4></div>
+                                    <div class="col-6"><h5>@Model.Vehicle.RegistrationExpiryMonth</h5></div>
+                                </div>
+                                <div class="col-8 row mb-3">
+                                    <div class="col-6"><h4>Registerarion Expiry Year</h4></div>
+                                    <div class="col-6"><h5>@Model.Vehicle.RegistrationExpiryYear</h5></div>
+                                </div>
+                            }
+                            @if (Model.Vehicle.ZipCode != null)
+                            {
+                                <div class="col-10 row mb-2">
+                                    <div class="col-5"><h4>Zip Code</h4></div>
+                                    <div class="col-7"><h5>@Model.Vehicle.ZipCode</h5></div>
+                                </div>
+                            }
+                            <div class="col-10 row mb-2">
+                                <div class="col-5"><h4>Vehicle Current Address</h4></div>
+                                <div class="col-7"><h5>@Model.Vehicle.CurrentAddress</h5></div>
+                            </div>
+                        </div>
+                        <div class="extraDetails">
+                            <h2>EXTRA FEATURES</h2>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        @if (@Model.Vehicle.VehicleFeatures.ABS)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                ABS
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.AlloyWheels)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Alloy Wheels
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.PassengerAirbag)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Passenger Airbag
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.HeatedDoorMirrors)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Heated Door Mirrors
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.AirConditioning)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Air Conditioning
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.TripComputer)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Trip Computer
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        @if (Model.Vehicle.VehicleFeatures.SideAirbags)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Side Airbags
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.AudioRemoteControl)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Audio Remote Control
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.FoldingRearSeats)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Folding Rear Seats
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.CentralLockingKeyless)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Central Locking - Keyless
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.WeatherShields)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Weather Shields
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        @if (Model.Vehicle.VehicleFeatures.ElectricFrontSeats)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Electric Front Seats
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.EngineImmobiliser)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Engine Immobiliser
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.FogLamps)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Fog Lamps
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.GPSSatelliteNavigation)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                GPS Satellite Navigation
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.HeadlightCovers)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Headlight Covers
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        @if (Model.Vehicle.VehicleFeatures.LeatherSeats)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Leather Seats
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.LeatherTrim)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Leather Trim
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.RoofDeflector)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Roof Deflector
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.RearSpoiler)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Rear Spoiler
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.TintedWindows)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Tinted Windows
+                                            </li>
+                                        }
+                                        @if (Model.Vehicle.VehicleFeatures.TowBar)
+                                        {
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                Tow Bar
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="aside_about">
+                            <h2>INQUIRE ABOUT THIS VEHICLE</h2>
+                            <div class="aside_about_call row mx-0">
+                                <div class="col-2 p-0"><span class="fa fa-phone"></span></div>
+                                <div class="col-10 p-0">
+                                    <div class="phone">@Model.Vehicle.PhoneNumber</div>
+                                </div>
+                            </div>
+                            <div class="aside_about_seller">
+                                <p>Current City: <span>@Model.Vehicle.City</span></p>
+                            </div>
+                            <div class="aside_about_form">
+                                <div class="aside_about_form_link">
+                                    <a class="tab-link lnk-1 active w-100 text-center" href="">GENERAL INQUIRY</a>
+                                </div>
+                                <form class="frm-1" method="post">
+                                    <input asp-for="OfferPriceMessage.type" value="0" class="d-none" />
+                                    <input asp-for="OfferPriceMessage.VehicleId" value="@Model.Vehicle.Id" class="d-none" />
+                                    <input asp-for="OfferPriceMessage.EmailFrom" placeholder="YOUR NAME" />
+                                    <span asp-validation-for="OfferPriceMessage.EmailFrom" class="text-danger"></span>
+                                    <input asp-for="OfferPriceMessage.EmailTo" type="email" placeholder="EMAIL ADDRESS" />
+                                    <span asp-validation-for="OfferPriceMessage.EmailTo" class="text-danger"></span>
+                                    <input asp-for="OfferPriceMessage.Phone" placeholder="PHONE NO." />
+                                    <span asp-validation-for="OfferPriceMessage.Phone" class="text-danger"></span>
+                                    <textarea asp-for="OfferPriceMessage.Message" placeholder="message"></textarea>
+                                    <span asp-validation-for="OfferPriceMessage.Message" class="text-danger"></span>
+                                    <button class="cus_btn" type="submit">
+                                        SEND MESSAGE <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </form>
+                            </div>
+                            <h2>CAR PAYMENT CALCULATOR</h2>
+                            <div class="aside_about_payment">
+                                <div class="payment_form">
+                                    <input id="amount"
+                                           type="number"
+                                           placeholder="TOTAL VALUE/LOAN AMOUNT" />
+                                    <input id="down" type="number" placeholder="DOWN PAYMENT" />
+                                    <input id="months"
+                                           type="number"
+                                           placeholder="LOAN TERM IN MONTHS" />
+                                    <input id="years"
+                                           type="number"
+                                           placeholder="LOAN TERM IN YEARS" />
+                                    <input id="interest"
+                                           type="number"
+                                           placeholder="INTEREST RATE IN %"
+                                           value=""
+                                           name="name" />
+                                    <button id="pymntbtn" class="cus_btn">
+                                        ESTIMATE PAYMENT <span class="fa fa-angle-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="payment_call row m-0">
+                                <div class="col-2 p-0">
+                                    <span class="fa fa-calculator icon"></span>
+                                </div>
+                                <div class="col-10 p-0">
+                                    <div class="payment_res">
+                                        $<span id="output">00.0</span>
+                                        <p>PER MONTH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Details * * * -->
+    <!-- * * *Start- Related Vehicles * * * -->
+    <section id="RelatedVehicles">
+        <div class="container">
+            <h5 class="section_subtitle">FIND OUT MORE</h5>
+            <br />
+            <h2 class="section_title">RELATED VEHICLES ON SALE</h2>
+            <div class="row">
+                @{int MaxCount = 0;}
+                @foreach (var relatedVehicles in Model.RelatedVehicles)
+                {
+                    if (MaxCount <= 12)
+                    {
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="related_item">
+                                @{int imgCount = 0;}
+                                @foreach (var image in Model.VehicleImages)
+                                {
+                                    if (image.VehicleId == relatedVehicles.Id && imgCount == 0)
+                                    {
+                                        <img src="~/image/Items/@image.Name" alt="" />
+                                        imgCount += 1;
+                                    }
+                                }
+                                <div class="related_item_val">Model<span>@relatedVehicles.VehicleManufacturerYear</span></div>
+                                <h2>
+                                    <a asp-controller="Vehicle" asp-action="Details" asp-route-id="@relatedVehicles.Id">
+                                        @foreach (var item in ViewBag.make)
+                                        {
+                                            if (item.Id == Model.Vehicle.VehicleModel.MakeId)
+                                            {
+                                                @item.Name
+                                            }
+                                        }
+                                        @relatedVehicles.VehicleModel.Name
+                                    </a>
+                                </h2>
+                                <div class="related_item_info row mx-0">
+                                    <span class="itemPrice">$@relatedVehicles.Price</span>
+                                    <span class="itemNumber">
+                                        <span class="fa fa-tachometer"></span> @relatedVehicles.Mileage KM
+                                    </span>
+                                </div>
+                                <div class="related_item_links">
+                                    <a>@relatedVehicles.Status</a>
+                                    <a>@relatedVehicles.VehicleManufacturerYear</a>
+                                    <a>@relatedVehicles.TransmissionType.Name</a>
+                                    <a>@relatedVehicles.ExteriorColor</a>
+                                    <a>@relatedVehicles.FuelType.Name</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    MaxCount += 1;
+                }
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Related Vehicles * * * -->
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Toastr * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

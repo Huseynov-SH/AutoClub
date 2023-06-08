@@ -1,0 +1,66 @@
+﻿@model AutoClub.Models.AboutUs;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-10 layout-spacing">
+        <form method="post" enctype="multipart/form-data">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>AboutUs</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mb-3">Current Image</p>
+                    <div class="mb-4 row justify-content-center">
+                        <img src="~/image/About/@Model.Image" width="200" />
+                    </div>
+                    <p class="">New Image</p>
+                    <div class="input-group mb-4">
+                        <input asp-for="Photo" class="form-control-file" id="exampleFormControlFile1">
+                        <span asp-validation-for="Photo" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Title</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <input asp-for="Title" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1">
+                        <span asp-validation-for="Title" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">SubTitle</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-type"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></span>
+                        </div>
+                        <textarea asp-for="SubTitle" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="SubTitle" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <p class="">Description</p>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span>
+                        </div>
+                        <textarea asp-for="Description" class="form-control" placeholder="Title" aria-label="notification" aria-describedby="basic-addon1"></textarea>
+                        <span asp-validation-for="Description" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="input-group my-4">
+                        <button type="submit" class="btn btn-outline-primary btn-block my-3">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+
+

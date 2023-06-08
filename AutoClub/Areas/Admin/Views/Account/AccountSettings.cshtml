@@ -1,0 +1,187 @@
+﻿@using AutoClub.Models;
+@model AppUser;
+@{
+    ViewData["Title"] = "AccountSettings";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layout-px-spacing">
+
+    <div class="account-settings-container layout-top-spacing">
+        <form method="post" enctype="multipart/form-data">
+            <div class="account-content">
+                <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                            <div class="section general-info">
+                                <div class="info">
+                                    <h6 class="">General Information</h6>
+                                    <div class="row">
+                                        <div class="col-lg-11 mx-auto">
+                                            <div class="row">
+                                                <div class="col-xl-2 col-lg-12 col-md-4">
+                                                    <div class="upload mt-4 pr-md-4">
+                                                        <div class="dropify-wrapper has-preview">
+                                                            <div class="dropify-message">
+                                                                <span class="file-icon"></span> <p>Click to Upload or Drag n Drop</p><p class="dropify-error">Ooops, something wrong appended.</p>
+                                                            </div>
+                                                            <div class="dropify-loader" style="display: none;"></div>
+                                                            <div class="dropify-errors-container">
+                                                                <ul></ul>
+                                                            </div>
+                                                            <input asp-for="Photo" id="input-file-max-fs" class="dropify">
+                                                            <span asp-validation-for="Photo" class="text-danger"></span>
+                                                        </div>
+                                                        <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Picture</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                                                    <div class="form">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label for="fullName">First Name</label>
+                                                                    <input asp-for="FirstName" class="form-control mb-4" id="fullName" placeholder="First Name">
+                                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label for="fullName">Last Name</label>
+                                                                    <input asp-for="LastName" class="form-control mb-4" id="fullName" placeholder="Last Name">
+                                                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="profession">Profession</label>
+                                                            <input asp-for="Section" class="form-control mb-4" id="fullName" placeholder="Profession">
+                                                            <span asp-validation-for="Section" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                            <div id="about" class="section about">
+                                <div class="info">
+                                    <h5 class="">About</h5>
+                                    <div class="row">
+                                        <div class="col-md-11 mx-auto">
+                                            <div class="form-group">
+                                                <label for="aboutBio">Bio</label>
+                                                <textarea asp-for="Description" class="form-control" id="aboutBio" placeholder="Tell something about yourself" rows="10"></textarea>
+                                                <span asp-validation-for="Description" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                            <div id="contact" class="section contact">
+                                <div class="info">
+                                    <h5 class="">Contact</h5>
+                                    <div class="row">
+                                        <div class="col-md-11 mx-auto">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="address">Address</label>
+                                                        <input asp-for="Location" class="form-control mb-4" id="address" placeholder="Address">
+                                                        <span asp-validation-for="Location" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="phone">Phone</label>
+                                                        <input asp-for="Phone" class="form-control mb-4" id="phone" placeholder="Write your phone number here">
+                                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
+                            <div id="social" class="section social">
+                                <div class="info">
+                                    <h5 class="">Social</h5>
+                                    <div class="row">
+
+                                        <div class="col-md-11 mx-auto">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group social-linkedin mb-3">
+                                                        <div class="input-group-prepend mr-3">
+                                                            <span class="input-group-text" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+                                                        </div>
+                                                        <input asp-for="FacebookLink" class="form-control" placeholder="Facebook Link" aria-label="Username" aria-describedby="linkedin">
+                                                        <span asp-validation-for="FacebookLink" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group social-linkedin mb-3">
+                                                        <div class="input-group-prepend mr-3">
+                                                            <span class="input-group-text" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></span>
+                                                        </div>
+                                                        <input asp-for="InstagramLink" class="form-control" placeholder="Instagram Link" aria-label="Username" aria-describedby="linkedin">
+                                                        <span asp-validation-for="InstagramLink" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-11 mx-auto">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group social-linkedin mb-3">
+                                                        <div class="input-group-prepend mr-3">
+                                                            <span class="input-group-text" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></span>
+                                                        </div>
+                                                        <input asp-for="TwitterLink" class="form-control" placeholder="Twitter Link" aria-label="Username" aria-describedby="linkedin">
+                                                        <span asp-validation-for="TwitterLink" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group social-linkedin mb-3">
+                                                        <div class="input-group-prepend mr-3">
+                                                            <span class="input-group-text" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span>
+                                                        </div>
+                                                        <input asp-for="LinkedinLink" class="form-control" placeholder="Linkedin Link" aria-label="Username" aria-describedby="linkedin">
+                                                        <span asp-validation-for="LinkedinLink" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-settings-footer">
+                <div class="as-footer-container">
+                    <button type="submit" id="multiple-messages" class="btn btn-dark btn-block">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

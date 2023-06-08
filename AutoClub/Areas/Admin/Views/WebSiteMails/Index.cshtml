@@ -1,0 +1,97 @@
+﻿@model AutoClub.Models.WebSiteMails;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-10 layout-spacing">
+        <form method="post">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                <h4>Emails</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <p class="">Email1</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg></span>
+                                </div>
+                                <input asp-for="Email1" class="form-control" placeholder="Email1" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email1" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p class="">Email1 Password</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                </div>
+                                <input asp-for="Email1Password" class="form-control" placeholder="Email1 Password" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email1Password" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <p class="">Email2</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg></span>
+                                </div>
+                                <input asp-for="Email2" class="form-control" placeholder="Email2" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email2" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p class="">Email2 Password</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                </div>
+                                <input asp-for="Email2Password" class="form-control" placeholder="Email2 Password" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email2Password" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-6">
+                            <p class="">Email3</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg></span>
+                                </div>
+                                <input asp-for="Email3" class="form-control" placeholder="Email3" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email3" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p class="">Email3 Password</p>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                                </div>
+                                <input asp-for="Email3Password" class="form-control" placeholder="Email3 Password" aria-label="notification" aria-describedby="basic-addon1">
+                                <span asp-validation-for="Email3Password" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group my-4">
+                        <button type="submit" class="btn btn-outline-primary btn-block my-3">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

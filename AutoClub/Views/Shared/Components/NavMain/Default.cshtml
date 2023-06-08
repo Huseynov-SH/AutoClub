@@ -1,0 +1,47 @@
+﻿@model AutoClub.Models.WebSiteBio;
+@{
+    Layout = null;
+}
+
+<nav class="navbar navbar-expand-lg main-nav">
+    <div class="container">
+        <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+            <h3 class="main-nav_logo">Auto<span>Club</span></h3>
+        </a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars bars_icon"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a asp-controller="Home" asp-action="Index" id="Nav_Link_Home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="Home" asp-action="VehicleList" id="Nav_Link_VehicleList" class="nav-link">All Vehicles</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="Vehicle" asp-action="Compare" id="Nav_Link_Compare" class="nav-link">Compare</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="About" asp-action="AboutUs" id="Nav_Link_About" class="nav-link">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="Shops" asp-action="Index" id="Nav_Link_Shops" class="nav-link">Shops</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="Shop" asp-action="Index" id="Nav_Link_Shop" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item active">
+                    <a asp-controller="Contact" asp-action="Index" id="Nav_Link_Contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,31 @@
+﻿@model AutoClub.Models.AboutUsChoseUs;
+@{
+    ViewData["Title"] = "ChooseUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-11 layout-spacing">
+        <form method="post" enctype="multipart/form-data">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-content widget-content-area">
+                    <p class="">Description</p>
+                    <div class="input-group mb-4">
+                        <input asp-for="Description" id="t-text" class="form-control">
+                        <span asp-validation-for="Description" class="text-danger mt-2 ml-5" style="width:100%;"></span>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-outline-primary btn-block my-3">Save changes</button>
+                        <br />
+                        <a asp-controller="About" asp-action="Choose" class="btn btn-outline-secondary btn-block">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,316 @@
+﻿@model AutoClub.ViewModels.AboutUsVM;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Club</title>
+    <link rel="shortcut icon" href="~/image/logo/favicon.png">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <!-- * * * FontAwesome * * *  -->
+    <script src="https://kit.fontawesome.com/d010444104.js"
+            crossorigin="anonymous"></script>
+    <!-- * * * Google Fonts * * * -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans|Titillium+Web:400,700&display=swap"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap"
+          rel="stylesheet" />
+    <!-- * * *  Owl Carousel * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+          href="~/extensions/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <!-- * * * Range Slider * * * -->
+    <link rel="stylesheet"
+          href="~/extensions/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
+    <!-- * * * Toastr * * * -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+          rel="stylesheet" />
+    <!-- * * * Css * * * -->
+    <link rel="stylesheet" href="~/css/scss/style.css" />
+</head>
+<body>
+    <!-- * * *Start- Top Bar * * *-->
+    @await Component.InvokeAsync("HeaderTopBar")
+    <!-- * * *End- Top Bar * * *-->
+    <!-- * * *Start- Navbar * * * -->
+    @await Component.InvokeAsync("NavMain")
+    <!-- * * *End- Navbar * * * -->
+    <!-- * * *Start- Page Header * * * -->
+    <section id="AboutPageHeader">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-12 col-md-4">
+                    <div class="text">
+                        <h1>About Us</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="text2">
+                        <h3>The Largest Auto Dealer Online</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- Page Header * * * -->
+    <!-- * * *Start- Page Root * * * -->
+    <section id="AboutRoot">
+        <div class="container">
+            <a href="" style="color: #999999;">Home</a>
+            <i class="fa fa-angle-right" style="color: #999999" ;></i>
+            <a href="" style="color: #545454">About Us</a>
+        </div>
+    </section>
+    <!-- * * *End- Page Root * * * -->
+    <!-- * * *Start- About Main * * * -->
+    <section id="AboutMain">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="aboutmain_info">
+                        <div class="info_title">
+                            <h2>@Model.AboutUs.Title</h2>
+                        </div>
+                        <div class="info_subtitle">
+                            <h6>
+                                @Model.AboutUs.SubTitle
+                            </h6>
+                        </div>
+                        <div class="info_main_info">
+                            <p>
+                                @Model.AboutUs.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="aboutmain_img">
+                        <img src="~/image/About/@Model.AboutUs.Image" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- About Main * * * -->
+    <!-- * * *Start- About Main * * * -->
+    <section id="AboutCustomers">
+        <div class="container">
+            <h3 class="subtit">CUSTOMERS ARE IMPORTANT FOR US</h3>
+            <br />
+            <h2 class="tit">WHAT WE OFFERS</h2>
+            <div class="row">
+                @foreach (var offer in Model.AboutUsOffers)
+                {
+                    <div class="col-12 col-md-4">
+                        <div class="reason">
+                            <div class="reason_img">
+                                <img src="~/image/About/@offer.Image" alt="" />
+                            </div>
+                            <div class="reason_val">
+                                <span>@offer.OffersSection</span>
+                            </div>
+                            <div class="reason_title">
+                                <h2>@offer.OffersTitle</h2>
+                            </div>
+                            <div class="reason_description">
+                                <p>
+                                    @offer.OffersDescription
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- About Main * * * -->
+    <!-- * * *Start- About More * * * -->
+    <section id="AboutMore">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 px-4">
+                    <div class="aboutmore_left">
+                        <div class="left_right_title">
+                            <h2>WHY CHOOSE US</h2>
+                        </div>
+                        <div class="left_description">
+                            <p>
+                                Curabitur libero. Donec facilisis velit eu est. Phasellus cons
+                                quat. Aenean vitae quam. Vivamus etyd nunc. Nunc consequsem
+                                velde metus imperdiet lacinia. Lorem ipsum dolor sit amet sed
+                                consectetur adipisicing elit sed do eiusmod.
+                            </p>
+                        </div>
+                        <div class="left_list">
+                            <ul>
+                                @foreach (var chose in Model.AboutUsChoseUs)
+                                {
+                                    <li>
+                                        <span class="fa fa-check"></span> @chose.Description
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 px-4">
+                    <div class="aboutmore_right">
+                        <div class="left_right_title">
+                            <h2>MORE INFO</h2>
+                        </div>
+                        <div id="blck1" class="info_block">
+                            <div class="info_block_title">
+                                @Model.AboutUsMoreInfo.Block1Title
+                                <a id="blckbut1"><span class="fa fa-angle-left"></span></a>
+                            </div>
+                            <div class="info_block_inside">
+                                <p>
+                                    @Model.AboutUsMoreInfo.Block1Inside
+                                </p>
+                            </div>
+                        </div>
+                        <div id="blck2" class="info_block">
+                            <div class="info_block_title">
+                                @Model.AboutUsMoreInfo.Block2Title
+                                <a id="blckbut2"><span class="fa fa-angle-left"></span></a>
+                            </div>
+                            <div class="info_block_inside">
+                                <p>
+                                    @Model.AboutUsMoreInfo.Block2Inside
+                                </p>
+                            </div>
+                        </div>
+                        <div id="blck3" class="info_block">
+                            <div class="info_block_title">
+                                @Model.AboutUsMoreInfo.Block3Title
+                                <a id="blckbut3"><span class="fa fa-angle-left"></span></a>
+                            </div>
+                            <div class="info_block_inside">
+                                <p>
+                                    @Model.AboutUsMoreInfo.Block3Inside
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- About More * * * -->
+    <!-- * * *Start- About Our Team Member * * * -->
+    <section id="AboutTeamMembers">
+        <div class="container">
+            <h3 class="subtit">THE PEOPLE YOU CAN TRUST ON</h3>
+            <br />
+            <h2 class="tit">OUR TEAM MEMBERS</h2>
+            <div class="team_members_carousel">
+                <div class="owl-carousel owl-theme">
+                    @foreach (var member in Model.Members)
+                    {
+                        <div class="item">
+                            <div class="team_member">
+                                <div class="member_img">
+                                    <img src="~/image/Users/@member.Image" alt="" />
+                                    <div class="member_social">
+                                        <div class="social_icons">
+                                            @if (member.FacebookLink != null)
+                                            {
+                                                <a href="@member.FacebookLink"><i class="fab fa-facebook-square"></i></a>
+                                            }
+                                            @if (member.InstagramLink != null)
+                                            {
+                                                <a href="@member.InstagramLink"><i class="fab fa-instagram-square"></i></a>
+                                            }
+                                            @if (member.TwitterLink != null)
+                                            {
+                                                <a href="@member.TwitterLink"><i class="fab fa-twitter-square"></i></a>
+                                            }
+                                            @if (member.LinkedinLink != null)
+                                            {
+                                                <a href="@member.LinkedinLink"><i class="fab fa-linkedin"></i></a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="member_val">
+                                    <h6>@member.Section</h6>
+                                </div>
+                                <div class="member_name">
+                                    <h4>@member.FirstName @member.LastName</h4>
+                                </div>
+                                <div class="member_description">
+                                    <p>
+                                        @member.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- * * *End- About Our Team Member * * * -->
+    <!-- * * *Start-Page Active Script * * *  -->
+    <script>
+        document.getElementById("Nav_Link_About").classList.add("active");
+    </script>
+    <!-- * * *End-Page Active Script * * *  -->
+    <!-- * * *Start- Footer * * * -->
+    <footer id="Footer">
+        <div class="container-fluid px-0">
+            <div class="footet_top">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-9 offset-md-3 px-0">
+                        <ul>
+                            <li>Low Prices, No Haggling</li>
+                            <li>Largest Car Dealership</li>
+                            <li>Multipoint Safety Check</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("FooterMain")
+            @await Component.InvokeAsync("FooterBottom")
+        </div>
+    </footer>
+    <!-- * * *End- Footer * * * -->
+    <!-- * * * Scripts * * * -->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    <!-- * * * JQuery * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- * * *  Toastr * * * -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- * * *  Owl Carousel * * * -->
+    <script src="~/extensions/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- * * * Range Slider * * * -->
+    <script src="~/extensions/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
+
+    <!-- * * * My Js * * * -->
+    <script src="~/js/script.js"></script>
+</body>
+</html>

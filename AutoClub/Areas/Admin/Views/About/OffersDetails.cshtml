@@ -1,0 +1,70 @@
+﻿@model AutoClub.Models.AboutUsOffers;
+@{
+    ViewData["Title"] = "OffersDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row justify-content-md-center my-5">
+    <div class="col-lg-11 layout-spacing">
+        <div class="statbox widget box box-shadow">
+            <div class="widget-content widget-content-area">
+                <div class="avatar avatar-xl row justify-content-around">
+                    <img src="~/image/About/@Model.Image" class="rounded" width="250" />
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-8 layout-spacing pt-4">
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Section</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.OffersSection</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Title</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.OffersTitle</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-2">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">@Model.OffersDescription</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row py-3">
+                            <div class="col-12 mt-2">
+                                <a asp-controller="About" asp-action="Offers" class="btn btn-outline-secondary btn-block">Go Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

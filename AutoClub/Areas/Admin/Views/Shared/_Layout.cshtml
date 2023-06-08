@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from designreset.com/cork/ltr/demo3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Mar 2020 16:43:00 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>AutoClub Management </title>
+    @*<link rel="icon" type="image/x-icon" href="~/admin/assets/img/favicon.ico" />*@
+    <link href="~/admin/assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <script src="~/admin/assets/js/loader.js"></script>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="~/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/admin/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="~/admin/assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
+    <link href="~/admin/assets/css/users/account-setting.css" rel="stylesheet" type="text/css" />
+    <link href="~/admin/plugins/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/admin/plugins/table/datatable/datatables.css">
+    <link rel="stylesheet" type="text/css" href="~/admin/plugins/table/datatable/dt-global_style.css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link href="~/admin/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="~/admin/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+</head>
+<body>
+    <!-- BEGIN LOADER -->
+    <div id="load_screen">
+        <div class="loader">
+            <div class="loader-content">
+                <div class="spinner-grow align-self-center"></div>
+            </div>
+        </div>
+    </div>
+    <!--  END LOADER -->
+    <!--  BEGIN NAVBAR  -->
+    <div class="header-container fixed-top">
+        <header class="header navbar navbar-expand-sm">
+            <ul class="navbar-item theme-brand flex-row  text-center">
+                @*<li class="nav-item theme-logo">
+                        <a href="index-2.html">
+                            <img src="~/admin/assets/img/logo.svg" class="navbar-logo" alt="logo">
+                        </a>
+                    </li>*@
+                <li class="nav-item theme-text">
+                    <a href="" class="nav-link"> AutoClub </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-item flex-row ml-md-auto">
+
+                @await Component.InvokeAsync("HeaderBio")
+
+            </ul>
+        </header>
+    </div>
+    <!--  END NAVBAR  -->
+    <!--  BEGIN NAVBAR  -->
+    <div class="sub-header-container">
+        <header class="header navbar navbar-expand-sm">
+            <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
+
+            <ul class="navbar-nav flex-row">
+                <li>
+                    <div class="page-header">
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <h5 class="mb-0">Admin: @User.Identity.Name</h5>
+                        }
+                        else if (User.IsInRole("Member"))
+                        {
+                            <h5 class="mb-0">Member: @User.Identity.Name</h5>
+                        }
+
+                    </div>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <!--  END NAVBAR  -->
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        <div class="sidebar-wrapper sidebar-theme">
+
+            <nav id="sidebar">
+                <div class="shadow-bottom"></div>
+                <ul class="list-unstyled menu-categories" id="accordionExample">
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <!--  Dashboard  -->
+                        <li class="menu">
+                            <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                    <span>Dashboard</span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </a>
+                            <ul class="collapse submenu list-unstyled" id="dashboard" data-parent="#accordionExample">
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="WebSiteBiography" asp-action="Biography">Site Biography</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="Make" asp-action="Index">Makes</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="VehicleModel" asp-action="Index">Vehicle Models</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="DriveType" asp-action="Index">Drive Types</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="FuelType" asp-action="Index">Fuel Types</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="TransmissionType" asp-action="Index">Transmission Types</a>
+                                </li>
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="WebSiteMails" asp-action="Index">WebSite Mails</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--  Main Slider  -->
+                        <li class="menu">
+                            <a asp-area="Admin" asp-controller="MainSlider" asp-action="Index" aria-expanded="false" class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+                                    <span>Main Slider</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!--  AboutUs  -->
+                        <li class="menu">
+                            <a href="#aboutus" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                    <span>AboutUs</span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </a>
+                            <ul class="collapse submenu list-unstyled" id="aboutus" data-parent="#accordionExample">
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="About" asp-action="Index">About</a>
+                                </li>
+                            </ul>
+                            <ul class="collapse submenu list-unstyled" id="aboutus" data-parent="#accordionExample">
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="About" asp-action="Offers">Offers</a>
+                                </li>
+                            </ul>
+                            <ul class="collapse submenu list-unstyled" id="aboutus" data-parent="#accordionExample">
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="About" asp-action="Choose">Choose Item</a>
+                                </li>
+                            </ul>
+                            <ul class="collapse submenu list-unstyled" id="aboutus" data-parent="#accordionExample">
+                                <li class="">
+                                    <a asp-area="Admin" asp-controller="About" asp-action="MoreInfo">More Info Acc</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--  Users  -->
+                        <li class="menu">
+                            <a href="#users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    <span>Users</span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </a>
+                            <ul class="collapse submenu list-unstyled" id="users" data-parent="#accordionExample">
+                                <li>
+                                    <a asp-area="Admin" asp-controller="User" asp-action="Users"> Users </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="User" asp-action="Company"> Companies </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="User" asp-action="Members"> Members </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="User" asp-action="Admin"> Admin </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--  Shop  -->
+                        <li class="menu">
+                            <a href="#shop" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                    <span>Shop</span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </a>
+                            <ul class="collapse submenu list-unstyled" id="shop" data-parent="#accordionExample">
+                                <li>
+                                    <a asp-area="Admin" asp-controller="ShopCategory" asp-action="Index"> Category </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="ShopSubCategory" asp-action="Index"> SubCategory </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                    <!--  New Vehicles  -->
+                    <li class="menu">
+                        <a asp-area="Admin" asp-controller="UnapprovedVehicles" asp-action="Index" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                                <span>New vehicles</span>
+                            </div>
+                        </a>
+                    </li>
+                    <!--  New Shop Product  -->
+                    <li class="menu">
+                        <a asp-area="Admin" asp-controller="UnapprovedShopProduct" asp-action="Index" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                                <span>New Shop Product</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <div class="shadow-bottom"></div> -->
+            </nav>
+
+        </div>
+        <!--  END SIDEBAR  -->
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+
+            @RenderBody()
+
+            <div class="footer-wrapper">
+                <div class="footer-section f-section-1">
+                    <p class="">Copyright © 2020 AutoClub.</p>
+                </div>
+            </div>
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="~/admin/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="~/admin/bootstrap/js/popper.min.js"></script>
+    <script src="~/admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/admin/plugins/dropify/dropify.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="~/admin/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+    <script src="~/admin/assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="~/admin/plugins/apex/apexcharts.min.js"></script>
+    <script src="~/admin/assets/js/dashboard/dash_1.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+</body>
+
+<!-- Mirrored from designreset.com/cork/ltr/demo3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Mar 2020 16:43:34 GMT -->
+</html>
